@@ -1,0 +1,72 @@
+see http://www.te923.org for more Informations
+You have to install libusb first. Te923 requires libusb.
+
+tar xvzf te923tool*
+cd te923tool*
+make all
+
+This will build a te923con binary file which is all you need. Feel free to copy it to /usr/bin or make a link.
+
+Usage
+The usage of the tool is very simple. There are some command line options you can use.
+
+-D gives you a debug output. Its usefull if you send me an email
+for debugging.
+
+-d dumps all data stored in internel memory (only small versio is
+supportet right now)
+
+-s gets the status from the device. See status info for more
+details
+
+-i sets the output for invalid values (unreachable sensors),
+default is hidden
+
+-h prints a help text
+
+-v prints the version number of the te923 tool
+
+If you start the tool (you have to start it as root), you get a colon separated line with all values. Unknown values (if sensor is not present) are hidden.
+
+T0:H0:T1:H1:T2:H2:T3:H3:T4:H4:T5:H5:PRESS:UV:FC:STORM:WD:WS:WG:WC:RC
+
+-  T0    - temperature from internal sensor in °C
+-  H0    - humidity from internal sensor in % rel
+-  T1..5 - temperature from external sensor 1..4 in °C
+-  H1..5 - humidity from external sensor 1...4 in % rel
+-  PRESS - air pressure in mBar
+-  UV    - UV index from UV sensor
+-  FC    - station forecast, see below for more details
+-  STORM - stormwarning; 0 - no warning, 1 - fix your dog
+-  WD    - wind direction in n x 22.5°; 0 -> north
+-  WS    - wind speed in m/s
+-  WG    - wind gust speed in m/s
+-  WC    - windchill temperature in °C
+-  RC    - rain counter (maybe since station starts measurement) as value
+
+
+weather forecast means (as precisely as possible)
+0 - heavy snow
+1 - little snow
+2 - heavy rain
+3 - little rain
+4 - cloudy
+5 - some clouds
+6 - sunny
+If you use the option -s you get a status report of the device. The output is
+
+SYSSW:BARSW:EXTSW:RCCSW:WINSW:BATR:BATU:BATW:BAT5:BAT4:BAT5:BAT2:BAT1
+
+SYSSW  - software version of system controller
+BARSW  - software version of barometer
+EXTSW  - software version of UV and channel controller
+RCCSW  - software version of rain controller
+WINSW  - software version of wind controller
+BATR   - battery of rain sensor (1-good (not present), 0-low)
+BATU   - battery of UV sensor (1-good (not present), 0-low)
+BATW   - battery of wind sensor (1-good (not present), 0-low)
+BAT5   - battery of sensor 5 (1-good (not present), 0-low)
+BAT4   - battery of sensor 4 (1-good (not present), 0-low)
+BAT3   - battery of sensor 3 (1-good (not present), 0-low)
+BAT2   - battery of sensor 2 (1-good (not present), 0-low)
+BAT1   - battery of sensor 1 (1-good (not present), 0-low)

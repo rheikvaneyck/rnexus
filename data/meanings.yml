@@ -1,0 +1,8 @@
+weather_forcast:
+  0: heavy snow
+  1: little snow
+  2: heavy rain
+  3: little rain
+  4: cloudy
+  5: some clouds
+  6: sunny

@@ -1,0 +1,6 @@
+- Create helper functions
+- make acriverecord modular
+- finish data import
+- create data analyszer
+- create image compiler
+- create sinatra app

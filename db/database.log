@@ -1,0 +1,56 @@
+D, [2012-12-28T22:48:07.256097 #16019] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2012-12-28T22:48:07.365683 #16019] DEBUG -- :   [1m[35m (108.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+D, [2012-12-28T22:48:07.466890 #16019] DEBUG -- :   [1m[36m (99.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+D, [2012-12-28T22:49:51.095430 #16047] DEBUG -- :   [1m[36m (2.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-28T22:49:51.095717 #16047]  INFO -- : Migrating to InitialMigration (20121228215613)
+D, [2012-12-28T22:49:51.096493 #16047] DEBUG -- :   [1m[35m (0.2ms)[0m  select sqlite_version(*)
+D, [2012-12-28T22:49:51.097219 #16047] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2012-12-28T22:49:51.103084 #16047] DEBUG -- :   [1m[35m (0.2ms)[0m  rollback transaction
+D, [2012-12-28T22:56:28.904015 #16226] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2012-12-28T22:56:29.009916 #16226] DEBUG -- :   [1m[35m (104.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+D, [2012-12-28T22:56:29.122042 #16226] DEBUG -- :   [1m[36m (111.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+D, [2012-12-28T22:56:29.133437 #16226] DEBUG -- :   [1m[35m (3.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+I, [2012-12-28T22:56:29.133862 #16226]  INFO -- : Migrating to InitialMigration (20121228215613)
+D, [2012-12-28T22:56:29.134876 #16226] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+D, [2012-12-28T22:56:29.140117 #16226] DEBUG -- :   [1m[35m (0.3ms)[0m  rollback transaction
+D, [2012-12-28T23:00:17.556272 #16507] DEBUG -- :   [1m[36m (2.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-28T23:00:17.556554 #16507]  INFO -- : Migrating to CreateMeasurements (20121228215613)
+D, [2012-12-28T23:00:17.557280 #16507] DEBUG -- :   [1m[35m (0.2ms)[0m  select sqlite_version(*)
+D, [2012-12-28T23:00:17.558013 #16507] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2012-12-28T23:00:17.596263 #16507] DEBUG -- :   [1m[35m (5.5ms)[0m  CREATE TABLE "measurements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "DT" integer, "T0" float, "H0" integer, "T1" float, "H1" integer, "T2" float, "H2" integer, "T3" float, "H3" integer, "T4" float, "H4" integer, "T5" float, "H5" integer, "PRESS" float, "UV" integer, "FC" integer, "STORM" integer, "WD" integer, "WS" float, "WG" float, "WC" float, "RC" integer) 
+D, [2012-12-28T23:00:17.599309 #16507] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121228215613')[0m
+D, [2012-12-28T23:00:17.731222 #16507] DEBUG -- :   [1m[35m (131.3ms)[0m  commit transaction
+D, [2012-12-28T23:10:04.522521 #17419] DEBUG -- :   [1m[36m (2.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-28T23:10:04.522887 #17419]  INFO -- : Migrating to CreateMeasurements (20121228215613)
+D, [2012-12-28T23:14:58.983539 #17507] DEBUG -- :   [1m[36m (2.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+D, [2012-12-28T23:14:58.985386 #17507] DEBUG -- :   [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+D, [2012-12-28T23:14:58.989138 #17507] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-28T23:14:58.989371 #17507]  INFO -- : Migrating to CreateMeasurements (20121228215613)
+D, [2012-12-28T23:14:58.990043 #17507] DEBUG -- :   [1m[35m (0.3ms)[0m  select sqlite_version(*)
+D, [2012-12-28T23:14:58.990710 #17507] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2012-12-28T23:14:58.996716 #17507] DEBUG -- :   [1m[35m (1.8ms)[0m  DROP TABLE "measurements"
+D, [2012-12-28T23:14:58.999250 #17507] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20121228215613'[0m
+D, [2012-12-28T23:14:59.163581 #17507] DEBUG -- :   [1m[35m (163.9ms)[0m  commit transaction
+D, [2012-12-28T23:15:08.289107 #17532] DEBUG -- :   [1m[36m (2.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-28T23:15:08.289450 #17532]  INFO -- : Migrating to CreateMeasurements (20121228215613)
+D, [2012-12-28T23:15:08.290264 #17532] DEBUG -- :   [1m[35m (0.3ms)[0m  select sqlite_version(*)
+D, [2012-12-28T23:15:08.291033 #17532] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2012-12-28T23:15:08.335870 #17532] DEBUG -- :   [1m[35m (5.6ms)[0m  CREATE TABLE "measurements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "DT" integer, "T0" float, "H0" integer, "T1" float, "H1" integer, "T2" float, "H2" integer, "T3" float, "H3" integer, "T4" float, "H4" integer, "T5" float, "H5" integer, "PRESS" float, "UV" integer, "FC" integer, "STORM" integer, "WD" integer, "WS" float, "WG" float, "WC" float, "RC" integer) 
+D, [2012-12-28T23:15:08.339061 #17532] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121228215613')[0m
+D, [2012-12-28T23:15:08.445901 #17532] DEBUG -- :   [1m[35m (106.1ms)[0m  commit transaction
+D, [2012-12-28T23:15:36.717454 #17558] DEBUG -- :   [1m[36m (3.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+D, [2012-12-28T23:15:36.720200 #17558] DEBUG -- :   [1m[35m (0.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+D, [2012-12-28T23:15:36.725353 #17558] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-28T23:15:36.725701 #17558]  INFO -- : Migrating to CreateMeasurements (20121228215613)
+D, [2012-12-28T23:15:36.726440 #17558] DEBUG -- :   [1m[35m (0.2ms)[0m  select sqlite_version(*)
+D, [2012-12-28T23:15:36.727205 #17558] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2012-12-28T23:15:36.735047 #17558] DEBUG -- :   [1m[35m (1.6ms)[0m  DROP TABLE "measurements"
+D, [2012-12-28T23:15:36.737658 #17558] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20121228215613'[0m
+D, [2012-12-28T23:15:36.872493 #17558] DEBUG -- :   [1m[35m (134.2ms)[0m  commit transaction
+D, [2012-12-28T23:16:03.362388 #17664] DEBUG -- :   [1m[36m (2.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-28T23:16:03.362671 #17664]  INFO -- : Migrating to CreateMeasurements (20121228215613)
+D, [2012-12-28T23:16:03.363375 #17664] DEBUG -- :   [1m[35m (0.2ms)[0m  select sqlite_version(*)
+D, [2012-12-28T23:16:03.364134 #17664] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2012-12-28T23:16:03.402686 #17664] DEBUG -- :   [1m[35m (5.2ms)[0m  CREATE TABLE "measurements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "DT" date, "T0" float, "H0" integer, "T1" float, "H1" integer, "T2" float, "H2" integer, "T3" float, "H3" integer, "T4" float, "H4" integer, "T5" float, "H5" integer, "PRESS" float, "UV" integer, "FC" integer, "STORM" integer, "WD" integer, "WS" float, "WG" float, "WC" float, "RC" integer) 
+D, [2012-12-28T23:16:03.405082 #17664] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121228215613')[0m
+D, [2012-12-28T23:16:03.513438 #17664] DEBUG -- :   [1m[35m (107.8ms)[0m  commit transaction

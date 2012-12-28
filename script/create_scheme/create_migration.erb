@@ -1,0 +1,12 @@
+class AddSystemSettings < ActiveRecord::Migration
+  def up
+    create_table :measurements do |t|
+      <% scheme_description.each do |key, value| %><%="t.#{value} :#{key}" %>
+      <% end %>
+    end
+  end
+
+  def down
+    drop_table :measurements
+  end
+end

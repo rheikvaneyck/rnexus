@@ -1,0 +1,22 @@
+DT: date   # time stamp
+T0: float     # temperature from internal sensor in °C
+H0: integer   # humidity from internal sensor in % rel
+T1: float     # temperature from external sensor 1 in °C
+H1: integer   # humidity from external sensor 1 in % rel
+T2: float     # temperature from external sensor 2 in °C
+H2: integer   # humidity from external sensor 2 in % rel
+T3: float     # temperature from external sensor 3 in °C
+H3: integer   # humidity from external sensor 3 in % rel
+T4: float     # temperature from external sensor 4 in °C
+H4: integer   # humidity from external sensor 4 in % rel
+T5: float     # temperature from external sensor 5 in °C
+H5: integer   # humidity from external sensor 5 in % rel
+PRESS:  float # air pressure in mBar
+UV: integer   # UV index from UV sensor
+FC: integer   # station forecast, see below for more details
+STORM: integer # stormwarning; 0 - no warning, 1 - fix your dog 
+WD: integer   # wind direction in n x 22.5°; 0 -> north
+WS: float     # wind speed in m/s
+WG: float     # wind gust speed in m/s
+WC: float     # windchill temperature in °C
+RC: integer   # rain counter (maybe since station starts measurement) as value

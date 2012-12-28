@@ -1,0 +1,47 @@
+Output format is colon separatet values. Invalid values or values from not present sensors
+are hidden by default. You can set output for invalid with -i option. Output format:
+
+T0:H0:T1:H1:T2:H2:T3:H3:T4:H4:T5:H5:PRESS:UV:FC:STORM:WD:WS:WG:WC:RC
+
+  T0    - temperature from internal sensor in °C
+  H0    - humidity from internal sensor in % rel
+  T1..5 - temperature from external sensor 1..4 in °C
+  H1..5 - humidity from external sensor 1...4 in % rel
+  PRESS - air pressure in mBar
+  UV    - UV index from UV sensor
+  FC    - station forecast, see below for more details
+  STORM - stormwarning; 0 - no warning, 1 - fix your dog 
+  WD    - wind direction in n x 22.5°; 0 -> north
+  WS    - wind speed in m/s
+  WG    - wind gust speed in m/s
+  WC    - windchill temperature in °C
+  RC    - rain counter (maybe since station starts measurement) as value
+
+    weather forecast means (as precisely as possible)
+      0 - heavy snow
+      1 - little snow
+      2 - heavy rain
+      3 - little rain
+      4 - cloudy
+      5 - some clouds
+      6 - sunny
+
+Status output means:
+
+SYSSW:BARSW:EXTSW:RCCSW:WINSW:BATR:BATU:BATW:BAT5:BAT4:BAT5:BAT2:BAT1
+
+  SYSSW  - software version of system controller
+  BARSW  - software version of barometer
+  EXTSW  - software version of UV and channel controller
+  RCCSW  - software version of rain controller
+  WINSW  - software version of wind controller
+  BATR   - battery of rain sensor (1-good (not present), 0-low)
+  BATU   - battery of UV sensor (1-good (not present), 0-low)
+  BATW   - battery of wind sensor (1-good (not present), 0-low)
+  BAT5   - battery of sensor 5 (1-good (not present), 0-low)
+  BAT4   - battery of sensor 4 (1-good (not present), 0-low)
+  BAT3   - battery of sensor 3 (1-good (not present), 0-low)
+  BAT2   - battery of sensor 2 (1-good (not present), 0-low)
+  BAT1   - battery of sensor 1 (1-good (not present), 0-low)
+
+For updates, bugfixes and support visit http://te923.fukz.org.
