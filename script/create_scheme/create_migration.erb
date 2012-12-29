@@ -1,4 +1,4 @@
-class AddSystemSettings < ActiveRecord::Migration
+class CreateMeasurements < ActiveRecord::Migration
   def up
     create_table :measurements do |t|
       <% scheme_description.each do |key, value| %><%="t.#{value} :#{key}" %>

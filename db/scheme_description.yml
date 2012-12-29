@@ -1,4 +1,4 @@
-DT: date   # time stamp
+DT: integer   # time stamp in seconds
 T0: float     # temperature from internal sensor in °C
 H0: integer   # humidity from internal sensor in % rel
 T1: float     # temperature from external sensor 1 in °C

@@ -1,7 +1,7 @@
 class CreateMeasurements < ActiveRecord::Migration
   def up
     create_table :measurements do |t|
-      t.date :DT
+      t.integer :DT
       t.float :T0
       t.integer :H0
       t.float :T1
