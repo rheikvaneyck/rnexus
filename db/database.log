@@ -835,3 +835,7 @@ D, [2012-12-30T16:08:58.538794 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollba
 D, [2012-12-30T16:08:58.539990 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
 D, [2012-12-30T16:08:58.541164 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
 D, [2012-12-30T16:08:58.542031 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T23:07:36.844657 #7360] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (4.2ms)[0m  [1mSELECT T5 FROM "measurements" [0m
+D, [2012-12-30T23:20:59.770744 #7956] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (4.0ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-30T23:21:58.782843 #8133] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (3.0ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-30T23:23:32.123570 #8209] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (3.4ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m

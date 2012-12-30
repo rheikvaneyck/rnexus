@@ -3,4 +3,5 @@
 - finish data import
 - create data analyszer
 - create image compiler
-- create sinatra app
+- finish command line app
+- finish sinatra app
