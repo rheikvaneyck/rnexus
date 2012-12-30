@@ -5,5 +5,9 @@ module Rnexus
   class Plotter
     def initialize
     end
+    def get_chart_data(type)
+      data = DBManager::Measurement.all
+      return data
+    end
   end
 end
