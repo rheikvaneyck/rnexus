@@ -127,3 +127,711 @@ D, [2012-12-29T22:32:49.147990 #6096] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbe
 D, [2012-12-29T22:32:49.186675 #6096] DEBUG -- :   [1m[35m (5.9ms)[0m  CREATE TABLE "measurements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "DT" integer, "T0" float, "H0" integer, "T1" float, "H1" integer, "T2" float, "H2" integer, "T3" float, "H3" integer, "T4" float, "H4" integer, "T5" float, "H5" integer, "PRESS" float, "UV" integer, "FC" integer, "STORM" integer, "WD" integer, "WS" float, "WG" float, "WC" float, "RC" integer) 
 D, [2012-12-29T22:32:49.189781 #6096] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121229222340')[0m
 D, [2012-12-29T22:32:49.305754 #6096] DEBUG -- :   [1m[35m (115.2ms)[0m  commit transaction
+D, [2012-12-30T15:50:54.739610 #3371] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2012-12-30T15:50:54.854340 #3371] DEBUG -- :   [1m[35m (114.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+D, [2012-12-30T15:50:54.954693 #3371] DEBUG -- :   [1m[36m (99.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+D, [2012-12-30T15:50:54.960814 #3371] DEBUG -- :   [1m[35m (3.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+I, [2012-12-30T15:50:54.960942 #3371]  INFO -- : Migrating to CreateMeasurements (20121229222340)
+D, [2012-12-30T15:50:54.961240 #3371] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T15:50:54.968206 #3371] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "measurements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "DT" integer, "T0" float, "H0" integer, "T1" float, "H1" integer, "T2" float, "H2" integer, "T3" float, "H3" integer, "T4" float, "H4" integer, "T5" float, "H5" integer, "PRESS" float, "UV" integer, "FC" integer, "STORM" integer, "WD" integer, "WS" float, "WG" float, "WC" float, "RC" integer) 
+D, [2012-12-30T15:50:54.969649 #3371] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121229222340')[0m
+D, [2012-12-30T15:50:55.096807 #3371] DEBUG -- :   [1m[35m (126.9ms)[0m  commit transaction
+D, [2012-12-30T16:08:35.869853 #5387] DEBUG -- :   [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+D, [2012-12-30T16:08:35.870652 #5387] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+D, [2012-12-30T16:08:35.871746 #5387] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-30T16:08:35.871843 #5387]  INFO -- : Migrating to CreateMeasurements (20121229222340)
+D, [2012-12-30T16:08:35.872075 #5387] DEBUG -- :   [1m[35m (0.1ms)[0m  select sqlite_version(*)
+D, [2012-12-30T16:08:35.872289 #5387] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:35.875772 #5387] DEBUG -- :   [1m[35m (1.0ms)[0m  DROP TABLE "measurements"
+D, [2012-12-30T16:08:35.877172 #5387] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20121229222340'[0m
+D, [2012-12-30T16:08:36.025095 #5387] DEBUG -- :   [1m[35m (147.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:42.371497 #5412] DEBUG -- :   [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+I, [2012-12-30T16:08:42.371691 #5412]  INFO -- : Migrating to CreateMeasurements (20121229222340)
+D, [2012-12-30T16:08:42.371945 #5412] DEBUG -- :   [1m[35m (0.1ms)[0m  select sqlite_version(*)
+D, [2012-12-30T16:08:42.372185 #5412] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:42.398119 #5412] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "measurements" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "DT" integer, "T0" float, "H0" integer, "T1" float, "H1" integer, "T2" float, "H2" integer, "T3" float, "H3" integer, "T4" float, "H4" integer, "T5" float, "H5" integer, "PRESS" float, "UV" integer, "FC" integer, "STORM" integer, "WD" integer, "WS" float, "WG" float, "WC" float, "RC" integer) 
+D, [2012-12-30T16:08:42.399165 #5412] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121229222340')[0m
+D, [2012-12-30T16:08:42.530495 #5412] DEBUG -- :   [1m[35m (131.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:50.863721 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:50.873690 #5437] DEBUG -- :   [1m[35mMeasurement Exists (1.6ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:50.881817 #5437] DEBUG -- :   [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1345326300], ["FC", 0], ["H0", 0], ["H1", 0], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 0.0], ["RC", 65535], ["STORM", 0], ["T0", 0.0], ["T1", 0.0], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 0.0], ["WD", 0], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:51.008200 #5437] DEBUG -- :   [1m[35m (125.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.010464 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.012350 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1325416080 LIMIT 1
+D, [2012-12-30T16:08:51.014223 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1325416080], ["FC", 5], ["H0", 64], ["H1", 58], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 997.2], ["RC", 0], ["STORM", 0], ["T0", 22.6], ["T1", 11.9], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 21.2], ["WD", 8], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:51.116908 #5437] DEBUG -- :   [1m[35m (102.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.118422 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.119900 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356522000 LIMIT 1
+D, [2012-12-30T16:08:51.121616 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356522000], ["FC", 5], ["H0", 47], ["H1", 65], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 996.6], ["RC", 0], ["STORM", 0], ["T0", 20.15], ["T1", 9.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 9.1], ["WD", 1], ["WG", 0.5], ["WS", 0.8]]
+D, [2012-12-30T16:08:51.225702 #5437] DEBUG -- :   [1m[35m (103.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.227312 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.228847 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356525600 LIMIT 1
+D, [2012-12-30T16:08:51.230515 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356525600], ["FC", 4], ["H0", 49], ["H1", 66], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 997.4], ["RC", 0], ["STORM", 0], ["T0", 21.2], ["T1", 9.1], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 9.3], ["WD", 8], ["WG", 0.0], ["WS", 0.8]]
+D, [2012-12-30T16:08:51.342649 #5437] DEBUG -- :   [1m[35m (111.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.344140 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.345807 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356529200 LIMIT 1
+D, [2012-12-30T16:08:51.347273 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356529200], ["FC", 5], ["H0", 49], ["H1", 69], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 997.5], ["RC", 0], ["STORM", 0], ["T0", 21.0], ["T1", 8.0], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 7.8], ["WD", 10], ["WG", 0.9], ["WS", 0.8]]
+D, [2012-12-30T16:08:51.459606 #5437] DEBUG -- :   [1m[35m (111.9ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.461319 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.462797 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356532800 LIMIT 1
+D, [2012-12-30T16:08:51.464569 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356532800], ["FC", 5], ["H0", 51], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 997.6], ["RC", 0], ["STORM", 0], ["T0", 21.15], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 7.4], ["WD", 14], ["WG", 0.0], ["WS", 0.3]]
+D, [2012-12-30T16:08:51.568533 #5437] DEBUG -- :   [1m[35m (103.5ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.570124 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.571775 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356536400 LIMIT 1
+D, [2012-12-30T16:08:51.573430 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356536400], ["FC", 5], ["H0", 52], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 998.1], ["RC", 0], ["STORM", 0], ["T0", 21.55], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 7.4], ["WD", 14], ["WG", 0.0], ["WS", 0.3]]
+D, [2012-12-30T16:08:51.685657 #5437] DEBUG -- :   [1m[35m (111.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.697495 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.698682 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356540000 LIMIT 1
+D, [2012-12-30T16:08:51.700009 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356540000], ["FC", 6], ["H0", 50], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 998.6], ["RC", 0], ["STORM", 0], ["T0", 21.4], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 5.2], ["WD", 0], ["WG", 0.0], ["WS", 0.2]]
+D, [2012-12-30T16:08:51.810791 #5437] DEBUG -- :   [1m[35m (110.3ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.812357 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.813673 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356541740 LIMIT 1
+D, [2012-12-30T16:08:51.815163 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356541740], ["FC", 5], ["H0", 56], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 0], ["PRESS", 998.9], ["RC", 1], ["STORM", 0], ["T0", 21.85], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 0.0], ["UV", 0], ["WC", 5.2], ["WD", 1], ["WG", 0.9], ["WS", 0.4]]
+D, [2012-12-30T16:08:51.928896 #5437] DEBUG -- :   [1m[35m (113.2ms)[0m  commit transaction
+D, [2012-12-30T16:08:51.930443 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:51.931789 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356542040 LIMIT 1
+D, [2012-12-30T16:08:51.933233 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356542040], ["FC", 5], ["H0", 56], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 51], ["PRESS", 998.5], ["RC", 1], ["STORM", 0], ["T0", 23.0], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 15.9], ["UV", 0], ["WC", 4.8], ["WD", 3], ["WG", 0.7], ["WS", 0.4]]
+D, [2012-12-30T16:08:52.045968 #5437] DEBUG -- :   [1m[35m (112.2ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.047564 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.049056 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356545640 LIMIT 1
+D, [2012-12-30T16:08:52.050775 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356545640], ["FC", 5], ["H0", 51], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 78], ["PRESS", 999.8], ["RC", 1], ["STORM", 0], ["T0", 21.45], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 6.2], ["UV", 0], ["WC", 5.2], ["WD", 3], ["WG", 1.7], ["WS", 0.8]]
+D, [2012-12-30T16:08:52.154587 #5437] DEBUG -- :   [1m[35m (103.3ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.156058 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.157425 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356549240 LIMIT 1
+D, [2012-12-30T16:08:52.158890 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356549240], ["FC", 6], ["H0", 52], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 79], ["PRESS", 999.7], ["RC", 1], ["STORM", 0], ["T0", 21.25], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 5.7], ["UV", 0], ["WC", 5.3], ["WD", 2], ["WG", 0.9], ["WS", 0.8]]
+D, [2012-12-30T16:08:52.263433 #5437] DEBUG -- :   [1m[35m (104.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.264719 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.265838 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356552840 LIMIT 1
+D, [2012-12-30T16:08:52.267317 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356552840], ["FC", 6], ["H0", 53], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 81], ["PRESS", 999.6], ["RC", 1], ["STORM", 0], ["T0", 21.25], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 4.6], ["UV", 0], ["WC", 3.4], ["WD", 1], ["WG", 0.5], ["WS", 0.6]]
+D, [2012-12-30T16:08:52.372138 #5437] DEBUG -- :   [1m[35m (104.3ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.373566 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.375067 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356556440 LIMIT 1
+D, [2012-12-30T16:08:52.376747 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356556440], ["FC", 6], ["H0", 53], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 83], ["PRESS", 999.6], ["RC", 1], ["STORM", 0], ["T0", 21.4], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 4.2], ["UV", 0], ["WC", 2.9], ["WD", 3], ["WG", 1.1], ["WS", 0.9]]
+D, [2012-12-30T16:08:52.505700 #5437] DEBUG -- :   [1m[35m (128.5ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.507059 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.508228 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356560040 LIMIT 1
+D, [2012-12-30T16:08:52.509684 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356560040], ["FC", 6], ["H0", 53], ["H1", 72], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 83], ["PRESS", 999.6], ["RC", 1], ["STORM", 0], ["T0", 21.25], ["T1", 7.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 4.1], ["UV", 0], ["WC", 3.4], ["WD", 1], ["WG", 1.6], ["WS", 0.2]]
+D, [2012-12-30T16:08:52.631030 #5437] DEBUG -- :   [1m[35m (120.9ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.632484 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.633893 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356563760 LIMIT 1
+D, [2012-12-30T16:08:52.635595 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356563760], ["FC", 5], ["H0", 53], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 81], ["PRESS", 998.8], ["RC", 1], ["STORM", 0], ["T0", 21.05], ["T1", 14.6], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 4.7], ["UV", 0], ["WC", 4.5], ["WD", 3], ["WG", 1.3], ["WS", 0.4]]
+D, [2012-12-30T16:08:52.756249 #5437] DEBUG -- :   [1m[35m (120.2ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.757820 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.759173 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356567360 LIMIT 1
+D, [2012-12-30T16:08:52.760700 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356567360], ["FC", 5], ["H0", 54], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 81], ["PRESS", 997.6], ["RC", 1], ["STORM", 0], ["T0", 20.8], ["T1", 14.5], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 5.2], ["UV", 0], ["WC", 4.8], ["WD", 1], ["WG", 0.6], ["WS", 0.5]]
+D, [2012-12-30T16:08:52.881531 #5437] DEBUG -- :   [1m[35m (120.3ms)[0m  commit transaction
+D, [2012-12-30T16:08:52.882907 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:52.884481 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356570960 LIMIT 1
+D, [2012-12-30T16:08:52.903869 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356570960], ["FC", 3], ["H0", 54], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 81], ["PRESS", 996.4], ["RC", 1], ["STORM", 0], ["T0", 20.6], ["T1", 14.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 5.7], ["UV", 0], ["WC", 5.5], ["WD", 1], ["WG", 0.0], ["WS", 0.5]]
+D, [2012-12-30T16:08:53.024619 #5437] DEBUG -- :   [1m[35m (120.2ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.025969 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.027165 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356574560 LIMIT 1
+D, [2012-12-30T16:08:53.028550 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356574560], ["FC", 3], ["H0", 54], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 80], ["PRESS", 994.8], ["RC", 1], ["STORM", 0], ["T0", 20.4], ["T1", 14.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 6.3], ["UV", 0], ["WC", 6.1], ["WD", 4], ["WG", 0.0], ["WS", 0.7]]
+D, [2012-12-30T16:08:53.141691 #5437] DEBUG -- :   [1m[35m (112.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.143260 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.144584 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356578160 LIMIT 1
+D, [2012-12-30T16:08:53.146038 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356578160], ["FC", 3], ["H0", 54], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 80], ["PRESS", 993.4], ["RC", 1], ["STORM", 0], ["T0", 20.4], ["T1", 14.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 6.5], ["UV", 0], ["WC", 6.2], ["WD", 2], ["WG", 1.4], ["WS", 1.0]]
+D, [2012-12-30T16:08:53.258684 #5437] DEBUG -- :   [1m[35m (112.2ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.260341 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.261716 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356581760 LIMIT 1
+D, [2012-12-30T16:08:53.263281 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356581760], ["FC", 3], ["H0", 54], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 86], ["PRESS", 992.1], ["RC", 2], ["STORM", 0], ["T0", 20.25], ["T1", 14.6], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 6.1], ["UV", 0], ["WC", 5.9], ["WD", 15], ["WG", 1.4], ["WS", 0.7]]
+D, [2012-12-30T16:08:53.375628 #5437] DEBUG -- :   [1m[35m (111.8ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.377108 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.378424 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356585360 LIMIT 1
+D, [2012-12-30T16:08:53.379924 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356585360], ["FC", 2], ["H0", 55], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 85], ["PRESS", 991.1], ["RC", 2], ["STORM", 0], ["T0", 20.2], ["T1", 14.6], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 6.5], ["UV", 0], ["WC", 5.9], ["WD", 14], ["WG", 0.8], ["WS", 1.1]]
+D, [2012-12-30T16:08:53.525820 #5437] DEBUG -- :   [1m[35m (145.4ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.527177 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.528449 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356588960 LIMIT 1
+D, [2012-12-30T16:08:53.529915 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356588960], ["FC", 2], ["H0", 55], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 81], ["PRESS", 991.2], ["RC", 2], ["STORM", 0], ["T0", 20.4], ["T1", 14.5], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 7.0], ["UV", 0], ["WC", 6.3], ["WD", 2], ["WG", 0.8], ["WS", 1.2]]
+D, [2012-12-30T16:08:53.650949 #5437] DEBUG -- :   [1m[35m (120.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.652510 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.653789 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356592560 LIMIT 1
+D, [2012-12-30T16:08:53.655268 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356592560], ["FC", 2], ["H0", 55], ["H1", 49], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 80], ["PRESS", 991.1], ["RC", 2], ["STORM", 0], ["T0", 20.6], ["T1", 14.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 7.5], ["UV", 0], ["WC", 6.4], ["WD", 15], ["WG", 2.4], ["WS", 1.3]]
+D, [2012-12-30T16:08:53.776323 #5437] DEBUG -- :   [1m[35m (120.5ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.777647 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.778766 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356596160 LIMIT 1
+D, [2012-12-30T16:08:53.780167 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356596160], ["FC", 2], ["H0", 55], ["H1", 49], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 78], ["PRESS", 991.9], ["RC", 2], ["STORM", 0], ["T0", 20.8], ["T1", 16.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 7.9], ["UV", 0], ["WC", 7.3], ["WD", 3], ["WG", 2.0], ["WS", 1.3]]
+D, [2012-12-30T16:08:53.901659 #5437] DEBUG -- :   [1m[35m (121.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:53.903133 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:53.904420 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356599760 LIMIT 1
+D, [2012-12-30T16:08:53.905862 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356599760], ["FC", 3], ["H0", 56], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 75], ["PRESS", 992.6], ["RC", 2], ["STORM", 0], ["T0", 21.2], ["T1", 17.0], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 8.3], ["UV", 0], ["WC", 7.7], ["WD", 5], ["WG", 1.7], ["WS", 1.4]]
+D, [2012-12-30T16:08:54.027035 #5437] DEBUG -- :   [1m[35m (120.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.028458 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.029788 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356603360 LIMIT 1
+D, [2012-12-30T16:08:54.031306 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356603360], ["FC", 3], ["H0", 49], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 67], ["PRESS", 992.9], ["RC", 2], ["STORM", 0], ["T0", 20.9], ["T1", 17.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 8.7], ["UV", 0], ["WC", 7.9], ["WD", 2], ["WG", 4.3], ["WS", 1.6]]
+D, [2012-12-30T16:08:54.153303 #5437] DEBUG -- :   [1m[35m (121.5ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.154835 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.156126 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356606960 LIMIT 1
+D, [2012-12-30T16:08:54.157632 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356606960], ["FC", 4], ["H0", 53], ["H1", 47], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 66], ["PRESS", 992.8], ["RC", 2], ["STORM", 0], ["T0", 21.8], ["T1", 19.9], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 9.6], ["UV", 0], ["WC", 9.6], ["WD", 2], ["WG", 1.9], ["WS", 1.9]]
+D, [2012-12-30T16:08:54.270474 #5437] DEBUG -- :   [1m[35m (112.3ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.271842 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.273115 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356610560 LIMIT 1
+D, [2012-12-30T16:08:54.274596 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356610560], ["FC", 4], ["H0", 53], ["H1", 45], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 53], ["PRESS", 993.1], ["RC", 2], ["STORM", 0], ["T0", 22.4], ["T1", 20.6], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 12.4], ["UV", 0], ["WC", 12.9], ["WD", 1], ["WG", 2.9], ["WS", 1.6]]
+D, [2012-12-30T16:08:54.387477 #5437] DEBUG -- :   [1m[35m (112.4ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.388834 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.390143 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356614160 LIMIT 1
+D, [2012-12-30T16:08:54.391764 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356614160], ["FC", 4], ["H0", 54], ["H1", 44], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 56], ["PRESS", 992.9], ["RC", 2], ["STORM", 0], ["T0", 22.0], ["T1", 19.9], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 10.6], ["UV", 0], ["WC", 9.8], ["WD", 1], ["WG", 1.6], ["WS", 1.1]]
+D, [2012-12-30T16:08:54.504418 #5437] DEBUG -- :   [1m[35m (112.1ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.505862 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.507125 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356617760 LIMIT 1
+D, [2012-12-30T16:08:54.508604 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356617760], ["FC", 4], ["H0", 54], ["H1", 44], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 60], ["PRESS", 992.8], ["RC", 2], ["STORM", 0], ["T0", 21.4], ["T1", 18.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 9.3], ["UV", 0], ["WC", 8.6], ["WD", 3], ["WG", 2.9], ["WS", 1.2]]
+D, [2012-12-30T16:08:54.629669 #5437] DEBUG -- :   [1m[35m (120.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.630987 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.632114 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356621360 LIMIT 1
+D, [2012-12-30T16:08:54.633447 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356621360], ["FC", 4], ["H0", 55], ["H1", 45], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 65], ["PRESS", 992.9], ["RC", 2], ["STORM", 0], ["T0", 21.2], ["T1", 18.5], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 8.3], ["UV", 0], ["WC", 7.5], ["WD", 13], ["WG", 0.0], ["WS", 0.4]]
+D, [2012-12-30T16:08:54.754961 #5437] DEBUG -- :   [1m[35m (121.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.756452 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.757687 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356624960 LIMIT 1
+D, [2012-12-30T16:08:54.759142 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356624960], ["FC", 4], ["H0", 55], ["H1", 46], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 70], ["PRESS", 993.6], ["RC", 2], ["STORM", 0], ["T0", 21.2], ["T1", 17.5], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 7.7], ["UV", 0], ["WC", 6.9], ["WD", 4], ["WG", 0.5], ["WS", 0.3]]
+D, [2012-12-30T16:08:54.880222 #5437] DEBUG -- :   [1m[35m (120.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:54.881536 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:54.882640 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356628560 LIMIT 1
+D, [2012-12-30T16:08:54.883991 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356628560], ["FC", 4], ["H0", 55], ["H1", 47], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 70], ["PRESS", 994.2], ["RC", 2], ["STORM", 0], ["T0", 21.2], ["T1", 17.3], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 7.6], ["UV", 0], ["WC", 7.2], ["WD", 3], ["WG", 1.3], ["WS", 0.5]]
+D, [2012-12-30T16:08:55.005560 #5437] DEBUG -- :   [1m[35m (121.1ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.007015 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.008248 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356632160 LIMIT 1
+D, [2012-12-30T16:08:55.009831 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356632160], ["FC", 5], ["H0", 55], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 74], ["PRESS", 994.8], ["RC", 2], ["STORM", 0], ["T0", 21.3], ["T1", 17.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 6.3], ["UV", 0], ["WC", 4.8], ["WD", 3], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:55.130901 #5437] DEBUG -- :   [1m[35m (120.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.132268 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.133591 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356635760 LIMIT 1
+D, [2012-12-30T16:08:55.135168 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356635760], ["FC", 5], ["H0", 55], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 78], ["PRESS", 995.8], ["RC", 2], ["STORM", 0], ["T0", 21.4], ["T1", 17.1], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 5.3], ["UV", 0], ["WC", 3.7], ["WD", 3], ["WG", 0.0], ["WS", 0.2]]
+D, [2012-12-30T16:08:55.247828 #5437] DEBUG -- :   [1m[35m (112.1ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.249252 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.261280 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356639360 LIMIT 1
+D, [2012-12-30T16:08:55.262842 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356639360], ["FC", 6], ["H0", 55], ["H1", 49], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 80], ["PRESS", 997.0], ["RC", 2], ["STORM", 0], ["T0", 21.35], ["T1", 16.8], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 5.2], ["UV", 0], ["WC", 4.3], ["WD", 3], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:55.374312 #5437] DEBUG -- :   [1m[35m (111.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.375738 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.377068 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356642960 LIMIT 1
+D, [2012-12-30T16:08:55.378590 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356642960], ["FC", 6], ["H0", 50], ["H1", 49], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 80], ["PRESS", 998.1], ["RC", 2], ["STORM", 0], ["T0", 21.2], ["T1", 16.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 4.7], ["UV", 0], ["WC", 3.4], ["WD", 2], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:55.483136 #5437] DEBUG -- :   [1m[35m (104.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.484659 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.485959 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356646560 LIMIT 1
+D, [2012-12-30T16:08:55.487493 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356646560], ["FC", 6], ["H0", 54], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 81], ["PRESS", 999.2], ["RC", 2], ["STORM", 0], ["T0", 20.95], ["T1", 16.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 5.5], ["UV", 0], ["WC", 5.5], ["WD", 3], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:55.591694 #5437] DEBUG -- :   [1m[35m (103.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.593206 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.594692 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356650160 LIMIT 1
+D, [2012-12-30T16:08:55.596240 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356650160], ["FC", 6], ["H0", 55], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 77], ["PRESS", 1001.3], ["RC", 2], ["STORM", 0], ["T0", 20.8], ["T1", 16.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 5.2], ["UV", 0], ["WC", 4.8], ["WD", 7], ["WG", 0.0], ["WS", 0.4]]
+D, [2012-12-30T16:08:55.708699 #5437] DEBUG -- :   [1m[35m (111.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.710179 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.711632 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356653760 LIMIT 1
+D, [2012-12-30T16:08:55.713154 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356653760], ["FC", 6], ["H0", 56], ["H1", 52], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 73], ["PRESS", 1002.9], ["RC", 2], ["STORM", 0], ["T0", 20.6], ["T1", 15.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 3.7], ["UV", 0], ["WC", 2.5], ["WD", 11], ["WG", 0.0], ["WS", 0.3]]
+D, [2012-12-30T16:08:55.833957 #5437] DEBUG -- :   [1m[35m (120.3ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.835300 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.836528 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356657360 LIMIT 1
+D, [2012-12-30T16:08:55.837823 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356657360], ["FC", 6], ["H0", 55], ["H1", 52], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 72], ["PRESS", 1005.0], ["RC", 2], ["STORM", 0], ["T0", 20.4], ["T1", 15.1], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 3.1], ["UV", 0], ["WC", 2.3], ["WD", 13], ["WG", 1.1], ["WS", 0.6]]
+D, [2012-12-30T16:08:55.950935 #5437] DEBUG -- :   [1m[35m (112.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:55.952532 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:55.953894 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356660960 LIMIT 1
+D, [2012-12-30T16:08:55.955464 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356660960], ["FC", 6], ["H0", 55], ["H1", 53], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 67], ["PRESS", 1007.1], ["RC", 2], ["STORM", 0], ["T0", 20.25], ["T1", 14.7], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 1.5], ["UV", 0], ["WC", -0.4], ["WD", 8], ["WG", 0.0], ["WS", 0.1]]
+D, [2012-12-30T16:08:56.067960 #5437] DEBUG -- :   [1m[35m (112.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.069273 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.070499 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356664560 LIMIT 1
+D, [2012-12-30T16:08:56.071901 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356664560], ["FC", 6], ["H0", 55], ["H1", 53], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 71], ["PRESS", 1009.2], ["RC", 2], ["STORM", 0], ["T0", 20.15], ["T1", 14.2], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -0.3], ["UV", 0], ["WC", -2.9], ["WD", 5], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:56.185045 #5437] DEBUG -- :   [1m[35m (112.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.186638 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.188141 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356668160 LIMIT 1
+D, [2012-12-30T16:08:56.189818 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356668160], ["FC", 6], ["H0", 55], ["H1", 53], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 73], ["PRESS", 1011.2], ["RC", 2], ["STORM", 0], ["T0", 20.0], ["T1", 14.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -1.2], ["UV", 0], ["WC", -3.0], ["WD", 11], ["WG", 0.6], ["WS", 0.1]]
+D, [2012-12-30T16:08:56.302001 #5437] DEBUG -- :   [1m[35m (111.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.303477 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.304694 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356671760 LIMIT 1
+D, [2012-12-30T16:08:56.306172 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356671760], ["FC", 6], ["H0", 55], ["H1", 53], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 75], ["PRESS", 1012.5], ["RC", 2], ["STORM", 0], ["T0", 19.9], ["T1", 14.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -1.7], ["UV", 0], ["WC", -3.6], ["WD", 7], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:56.411970 #5437] DEBUG -- :   [1m[35m (105.3ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.413428 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.414829 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356675360 LIMIT 1
+D, [2012-12-30T16:08:56.416507 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356675360], ["FC", 6], ["H0", 56], ["H1", 53], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 77], ["PRESS", 1014.2], ["RC", 2], ["STORM", 0], ["T0", 20.05], ["T1", 14.3], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -2.4], ["UV", 0], ["WC", -5.0], ["WD", 8], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:56.520630 #5437] DEBUG -- :   [1m[35m (103.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.522094 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.523352 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356678960 LIMIT 1
+D, [2012-12-30T16:08:56.525091 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356678960], ["FC", 6], ["H0", 56], ["H1", 52], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 79], ["PRESS", 1015.2], ["RC", 2], ["STORM", 0], ["T0", 20.2], ["T1", 14.0], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -2.9], ["UV", 0], ["WC", -5.6], ["WD", 7], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:56.637557 #5437] DEBUG -- :   [1m[35m (111.9ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.638894 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.640106 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356682560 LIMIT 1
+D, [2012-12-30T16:08:56.641520 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356682560], ["FC", 6], ["H0", 56], ["H1", 50], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 81], ["PRESS", 1017.3], ["RC", 2], ["STORM", 0], ["T0", 20.4], ["T1", 16.1], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -2.5], ["UV", 0], ["WC", -4.7], ["WD", 6], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:56.754702 #5437] DEBUG -- :   [1m[35m (112.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.756200 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.757664 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356686160 LIMIT 1
+D, [2012-12-30T16:08:56.759239 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356686160], ["FC", 6], ["H0", 56], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 79], ["PRESS", 1018.7], ["RC", 2], ["STORM", 0], ["T0", 20.6], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -1.2], ["UV", 0], ["WC", -1.6], ["WD", 3], ["WG", 0.0], ["WS", 0.2]]
+D, [2012-12-30T16:08:56.871593 #5437] DEBUG -- :   [1m[35m (111.8ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.873119 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.874491 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356689760 LIMIT 1
+D, [2012-12-30T16:08:56.876080 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356689760], ["FC", 6], ["H0", 55], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 71], ["PRESS", 1020.0], ["RC", 2], ["STORM", 0], ["T0", 22.1], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 1.6], ["UV", 0], ["WC", -1.2], ["WD", 14], ["WG", 0.0], ["WS", 0.3]]
+D, [2012-12-30T16:08:56.988594 #5437] DEBUG -- :   [1m[35m (112.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:56.990104 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:56.991426 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356693360 LIMIT 1
+D, [2012-12-30T16:08:56.992871 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356693360], ["FC", 6], ["H0", 54], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 69], ["PRESS", 1021.0], ["RC", 2], ["STORM", 0], ["T0", 22.3], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 1.9], ["UV", 0], ["WC", 7.2], ["WD", 2], ["WG", 0.8], ["WS", 0.4]]
+D, [2012-12-30T16:08:57.105753 #5437] DEBUG -- :   [1m[35m (112.4ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.107262 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.108740 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356696960 LIMIT 1
+D, [2012-12-30T16:08:57.110295 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356696960], ["FC", 6], ["H0", 53], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 59], ["PRESS", 1021.2], ["RC", 2], ["STORM", 0], ["T0", 22.55], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 6.4], ["UV", 0], ["WC", 8.2], ["WD", 14], ["WG", 0.0], ["WS", 0.4]]
+D, [2012-12-30T16:08:57.222539 #5437] DEBUG -- :   [1m[35m (111.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.224164 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.225600 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356700560 LIMIT 1
+D, [2012-12-30T16:08:57.227227 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356700560], ["FC", 6], ["H0", 53], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 50], ["PRESS", 1021.5], ["RC", 2], ["STORM", 0], ["T0", 22.6], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 4.6], ["UV", 0], ["WC", -0.2], ["WD", 2], ["WG", 0.0], ["WS", 0.8]]
+D, [2012-12-30T16:08:57.347816 #5437] DEBUG -- :   [1m[35m (120.0ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.349178 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.368329 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356704160 LIMIT 1
+D, [2012-12-30T16:08:57.369961 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356704160], ["FC", 6], ["H0", 54], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 62], ["PRESS", 1021.1], ["RC", 2], ["STORM", 0], ["T0", 22.3], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", 1.5], ["UV", 0], ["WC", -0.7], ["WD", 3], ["WG", 0.0], ["WS", 0.3]]
+D, [2012-12-30T16:08:57.473108 #5437] DEBUG -- :   [1m[35m (102.6ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.474643 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.476036 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356707760 LIMIT 1
+D, [2012-12-30T16:08:57.477583 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356707760], ["FC", 6], ["H0", 54], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 67], ["PRESS", 1022.2], ["RC", 2], ["STORM", 0], ["T0", 22.45], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -0.1], ["UV", 0], ["WC", -2.7], ["WD", 12], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:57.591254 #5437] DEBUG -- :   [1m[35m (113.2ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.592793 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.594088 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356711360 LIMIT 1
+D, [2012-12-30T16:08:57.595750 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356711360], ["FC", 5], ["H0", 54], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 70], ["PRESS", 1022.0], ["RC", 2], ["STORM", 0], ["T0", 22.4], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -0.8], ["UV", 0], ["WC", -2.8], ["WD", 3], ["WG", 0.7], ["WS", 0.1]]
+D, [2012-12-30T16:08:57.708159 #5437] DEBUG -- :   [1m[35m (111.9ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.709592 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.710783 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356714960 LIMIT 1
+D, [2012-12-30T16:08:57.712133 #5437] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356714960], ["FC", 5], ["H0", 54], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 71], ["PRESS", 1021.3], ["RC", 2], ["STORM", 0], ["T0", 22.45], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -1.0], ["UV", 0], ["WC", -2.6], ["WD", 13], ["WG", 0.0], ["WS", 0.0]]
+D, [2012-12-30T16:08:57.825330 #5437] DEBUG -- :   [1m[35m (112.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.826911 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.828444 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1356718560 LIMIT 1
+D, [2012-12-30T16:08:57.830060 #5437] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "measurements" ("DT", "FC", "H0", "H1", "H2", "H3", "H4", "H5", "PRESS", "RC", "STORM", "T0", "T1", "T2", "T3", "T4", "T5", "UV", "WC", "WD", "WG", "WS") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["DT", 1356718560], ["FC", 5], ["H0", 54], ["H1", 48], ["H2", 0], ["H3", 0], ["H4", 0], ["H5", 73], ["PRESS", 1021.0], ["RC", 2], ["STORM", 0], ["T0", 22.55], ["T1", 16.4], ["T2", 0.0], ["T3", 0.0], ["T4", 0.0], ["T5", -0.9], ["UV", 0], ["WC", -2.6], ["WD", 11], ["WG", 0.7], ["WS", 0.2]]
+D, [2012-12-30T16:08:57.942267 #5437] DEBUG -- :   [1m[35m (111.7ms)[0m  commit transaction
+D, [2012-12-30T16:08:57.943895 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.945191 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:57.956925 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:57.958819 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:57.960342 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:57.961518 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:57.962732 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.963844 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:57.964727 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:57.965916 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:57.967073 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:57.967964 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:57.969163 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.970223 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:57.971122 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:57.973366 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:57.974753 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:57.975896 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:57.977461 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.978789 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:57.979989 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:57.981433 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:57.982800 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:57.983945 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:57.985422 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.986768 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:57.988086 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:57.989545 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:57.990896 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:57.992053 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:57.993604 #5437] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:57.994956 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:57.996087 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:57.997672 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:57.999183 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.000321 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.001857 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.003460 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.004579 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.018343 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.019744 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.020665 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.021953 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.023337 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.024238 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.025510 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.026627 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.027544 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.028773 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.029922 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.030805 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.032046 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.033106 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.033975 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.035168 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.036273 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.037137 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.038332 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.039584 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.040484 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.041712 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.042852 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.043751 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.044924 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.045974 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.046880 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.048134 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.049248 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.050132 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.051365 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.052572 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.053553 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.054776 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.055925 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.056831 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.058007 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.059154 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.060054 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.061215 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.062326 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.063280 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.064508 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.065665 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.066552 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.067760 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.068907 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.069800 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.071017 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.072740 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.073645 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.074840 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.076075 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.076989 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.078192 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.079464 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.080480 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.081689 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.082874 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.083897 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.085107 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.086314 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.087324 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.088608 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.090567 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.103089 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.104467 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.105791 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.106753 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.108119 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.109538 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.110746 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.112208 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.113631 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.114689 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.116049 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.117502 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.118484 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.119882 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.121257 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.122334 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.123841 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.125197 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.126263 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.127715 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.129056 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.130877 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.132292 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.133731 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.134787 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.136180 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.137617 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.138686 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.140098 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.141554 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.3ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.142634 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.144012 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.145467 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.146623 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.148131 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.149479 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.150340 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.151599 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.152750 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.153634 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.154818 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.155963 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.156853 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.158055 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.159258 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.160152 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.161344 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.162536 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.163448 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.164655 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.165832 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.166704 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.167937 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.169130 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.170042 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.171320 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.172562 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.173468 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.174683 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.175905 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.176794 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.178052 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.179299 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.180224 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.181646 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.193441 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.194341 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.195676 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.196849 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.197775 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.198973 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.200159 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.201027 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.202223 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.203345 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.204217 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.205436 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.206541 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.207478 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.208664 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.209775 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.210643 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.211866 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.212982 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.213868 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.215090 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.216206 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.217083 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.218272 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.219496 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.220327 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.221540 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.222677 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.223590 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.224763 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.225895 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.226767 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.227991 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.229103 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.230072 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.231485 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.232658 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.233532 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.234712 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.235881 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.236757 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.237934 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.239098 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.240005 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.241203 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.242355 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.243323 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.244555 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.245719 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.246611 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.247832 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.248986 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.249885 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.251122 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.252297 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.253199 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.254464 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.255760 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.256672 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.257884 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.259101 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.260008 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.261276 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.262549 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.263500 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.275220 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.276650 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.277572 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.278818 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.280033 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.281032 #5437] DEBUG -- :   [1m[35m (0.2ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.282228 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.283433 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.284272 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.285507 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.286611 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.287508 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.288709 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.289800 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.290697 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.291936 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.293091 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.293948 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.295167 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.296268 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.297137 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.298354 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.299578 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.300442 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.301644 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.302732 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.303678 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.304860 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.305999 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.306879 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.308091 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.309207 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.310095 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.311320 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.312444 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.313358 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.314598 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.315795 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.316787 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.317967 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.319138 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.320011 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.321196 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.322354 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.323287 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.324631 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.325888 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.326790 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.328075 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.329239 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.330148 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.331526 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.332705 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.333657 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.334860 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.336101 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.337006 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.338220 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.339528 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.340434 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.341670 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.342891 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.343867 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.345100 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.346456 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.357794 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.359076 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.360312 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.361196 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.362443 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.363673 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.364588 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.365801 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.366921 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.367866 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.369053 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.370223 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.371149 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.372466 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.373628 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.374526 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.375794 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.376933 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.377821 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.379050 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.380179 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.381078 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.382367 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.383571 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.384464 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.385625 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.386763 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.387728 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.388928 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.390072 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.390979 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.392202 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.393354 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.394206 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.395459 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.396610 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.397570 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.398772 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.400002 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.400898 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.402083 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.403275 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.404172 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.405421 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.406580 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.407488 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.408688 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.409836 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.410719 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.411984 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.413170 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.414056 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.415283 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.416522 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.417366 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.418611 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.419835 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.420751 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.421969 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.423234 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.424118 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.425418 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.426647 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.427597 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.428858 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.440723 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.441675 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.442909 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.444115 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.445020 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.446205 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.447495 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.448311 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.449559 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.450695 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.451604 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.452796 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.453919 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.454800 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.456027 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.457126 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.458014 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.459246 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.460358 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.461230 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.462457 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.463603 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.464471 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.465655 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.466789 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.467708 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.468902 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.470049 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.470929 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.472165 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.473304 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.474180 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.475431 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.476546 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.477425 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.478597 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.479776 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.480733 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.482014 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.483245 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.484142 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.485338 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.486570 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.487492 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.488761 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.489996 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.490928 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.492180 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.493418 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.494268 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.495581 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.496746 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.497653 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.498886 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.500135 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.501040 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.502290 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.503582 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.504486 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.505704 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.506891 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.507862 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.509145 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.510427 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.511338 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.523078 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.524489 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.525433 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.526687 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.527884 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.528777 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.529964 #5437] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.531185 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.532211 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.533484 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.534625 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.535551 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2012-12-30T16:08:58.536798 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2012-12-30T16:08:58.537915 #5437] DEBUG -- :   [1m[36mMeasurement Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1[0m
+D, [2012-12-30T16:08:58.538794 #5437] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2012-12-30T16:08:58.539990 #5437] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2012-12-30T16:08:58.541164 #5437] DEBUG -- :   [1m[35mMeasurement Exists (0.2ms)[0m  SELECT 1 AS one FROM "measurements" WHERE "measurements"."DT" = 1345326300 LIMIT 1
+D, [2012-12-30T16:08:58.542031 #5437] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

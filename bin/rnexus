@@ -1,0 +1,6 @@
+#!/bin/env ruby
+require 'bundler/setup'
+require 'rnexus'
+
+runner = Rnexus::Runner.new(ARGV)
+runner.run

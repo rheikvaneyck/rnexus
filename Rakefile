@@ -1,3 +1,4 @@
+require 'csv'
 require 'active_record'
 require 'yaml'
 require 'logger'
@@ -15,6 +16,27 @@ namespace :db do
   desc "Migrate the database through scripts in db/migrate. Target specific version with VERSION=x"
   task :migrate => :environment do
     ActiveRecord::Migrator.migrate('db/migrate', ENV["VERSION"] ? ENV["VERSION"].to_i : nil )
+  end
+  
+  desc "Fill the database with test data"
+  task :load_test_data => :environment do
+    scheme_description = YAML.load_file(File.join('db','scheme_description.yml'))
+    data = CSV.read(File.join('data','weatherAll.data'), { col_sep: ':' })
+    
+    class Measurement < ActiveRecord::Base
+      validates_uniqueness_of :DT # FIXME: make this more generell
+    end
+    
+    data.each do |d|
+      i = 0
+      scheme_description.each do |key, value|
+        scheme_description[key] = d[i] unless d[i] == "i"
+        i += 1
+      end
+      
+      Measurement.create scheme_description
+    end
+
   end
   
   task :environment do

@@ -1,2 +1,2 @@
 adapter: sqlite3
-database:  /home/u0001/Source/Ruby/rnexus/db/weather_db.sqlite
+database:  db/weather_db.sqlite
