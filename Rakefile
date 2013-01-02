@@ -29,7 +29,7 @@ namespace :db do
   
   desc "Fill the database with test data"
   task :load_test_data => :environment do
-    scheme_description = YAML.load_file(File.join('db','scheme_description.yml'))
+    scheme_description = YAML.load_file(File.join('config','scheme_description.yml'))
     data = CSV.read(File.join('data','weatherAll.data'), { col_sep: ':' })
     
     class Measurement < ActiveRecord::Base
@@ -49,7 +49,7 @@ namespace :db do
   end
   
   task :environment do
-    ActiveRecord::Base.establish_connection(YAML::load(File.open(File.join('db','database.yml'))))
+    ActiveRecord::Base.establish_connection(YAML::load(File.open(File.join('config','database.yml'))))
     ActiveRecord::Base.logger = Logger.new(File.open(File.join('db','database.log'), 'a'))
   end  
 end

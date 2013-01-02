@@ -4,7 +4,7 @@ require 'erb'
 
 APP_ROOT = File.join(File.dirname(__FILE__),'..','..') # HELPER
 
-scheme_description = YAML.load_file(File.join(APP_ROOT,'db','scheme_description.yml'))
+scheme_description = YAML.load_file(File.join(APP_ROOT,'config','scheme_description.yml'))
 # puts scheme_description.inspect
 
 File.open('create_migration.erb','r') do |f|

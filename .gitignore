@@ -1,4 +1,3 @@
-*.komodoproject
 db/*.sqlite
 log/*.log
 tmp/
