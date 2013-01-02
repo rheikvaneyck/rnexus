@@ -1,3 +1,5 @@
+- create the temperature chart
+  - chart the last 30 measurements
 - Create helper functions
 - make acriverecord modular
 - finish data import

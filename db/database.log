@@ -839,3 +839,9 @@ D, [2012-12-30T23:07:36.844657 #7360] DEBUG -- :   [1m[36mRnexus::DBManager::M
 D, [2012-12-30T23:20:59.770744 #7956] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (4.0ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
 D, [2012-12-30T23:21:58.782843 #8133] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (3.0ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
 D, [2012-12-30T23:23:32.123570 #8209] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (3.4ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-31T14:10:37.441959 #18287] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (5.9ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-31T14:42:39.240507 #22386] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (3.1ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-31T14:43:09.630450 #22486] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (2.1ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-31T15:03:51.607900 #23586] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (2.2ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-31T15:04:10.271264 #23638] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (2.2ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2012-12-31T15:06:01.259608 #23803] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (2.1ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m

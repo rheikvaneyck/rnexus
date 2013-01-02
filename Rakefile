@@ -2,6 +2,8 @@ require 'csv'
 require 'active_record'
 require 'yaml'
 require 'logger'
+require 'rake'
+require 'rspec/core/rake_task'
 
 task :default => "orga:show_todos"
 
@@ -10,6 +12,13 @@ namespace :orga do
   task :show_todos do
     puts File.read('TODOS.TXT')
   end 
+end
+
+namespace :web do
+  desc "Run the sinatra app"
+  task :run do
+    ruby "-Ilib web/web_rnexus.rb"
+  end
 end
 
 namespace :db do
@@ -43,4 +52,12 @@ namespace :db do
     ActiveRecord::Base.establish_connection(YAML::load(File.open(File.join('db','database.yml'))))
     ActiveRecord::Base.logger = Logger.new(File.open(File.join('db','database.log'), 'a'))
   end  
+end
+
+namespace :test do
+  desc "run all tests" 
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.spec_files = FileList['spec/*_spec.rb']
+    t.options = '-v'
+  end
 end
