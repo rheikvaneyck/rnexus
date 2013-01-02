@@ -4,9 +4,10 @@
 module Rnexus
   class Plotter
     def initialize
+      @db = Rnexus::DBManager.new('config') # FIXME: make this from a variable
     end
     def get_chart_data(type)
-      data = DBManager::Measurement.all
+      data = Rnexus::DBManager::Measurement.all
       return data
     end
   end

@@ -1,0 +1,1 @@
+D, [2013-01-02T15:13:22.207882 #6276] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (53.4ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m

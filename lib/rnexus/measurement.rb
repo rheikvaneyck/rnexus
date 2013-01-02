@@ -9,9 +9,10 @@ require 'logger'
 
 module Rnexus
   class DBManager
-    def initialize(db_path)
-      db_config = YAML::load(File.open(File.join(db_path,'database.yml')))     
+    def initialize(config_path)
+      db_config = YAML::load(File.open(File.join(config_path,'database.yml')))     
       ActiveRecord::Base.establish_connection(db_config)
+      db_path = File.dirname(db_config["database"])
       ActiveRecord::Base.logger = Logger.new(File.open(File.join(db_path,'database.log'), 'a'))
     end
     class Measurement < ActiveRecord::Base

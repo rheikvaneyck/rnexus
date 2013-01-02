@@ -3,7 +3,7 @@ require 'date'
 
 describe Rnexus::DBManager do
   before(:all) do
-      @db = Rnexus::DBManager.new('db')
+      @db = Rnexus::DBManager.new('config')
   end
   
   it "be the first col in the db and holds seconds from 1.1.1970" do
