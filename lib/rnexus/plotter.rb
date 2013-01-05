@@ -1,5 +1,6 @@
 # This lib containts a module to read the database and generate
 # images from that data.
+require 'date'
 
 module Rnexus
   class Plotter

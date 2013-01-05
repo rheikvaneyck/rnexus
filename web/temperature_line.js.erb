@@ -9,7 +9,7 @@ $(function () {
                 marginBottom: 25
             },
             title: {
-                text: "<%= "#{chart_title}" %>",
+                text: "<%= chart_title %>",
                 x: -20 //center
             },
             subtitle: {
@@ -17,23 +17,26 @@ $(function () {
                 x: -20
             },
             xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    hour: '%H:%M'   
+                }
             },
-            yAxis: {
+            yAxis: [{
                 title: {
                     text: 'Temperature (°C)'
+                }
+            }, {
+                title: {
+                    text: 'Pressure (mbar)'
                 },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            },
+                opposite: true,
+            }], 
             tooltip: {
                 formatter: function() {
+                        var d = new Date(this.x)
                         return '<b>'+ this.series.name +'</b><br/>'+
-                        this.x +': '+ this.y +'°C';
+                        d.toLocaleString() +': '+ this.y +'°C';
                 }
             },
             legend: {
@@ -45,9 +48,17 @@ $(function () {
                 borderWidth: 0
             },
             series: [{
-                name: 'Tokyo',
-                data: [<%= temp_data.join(", ") %>]
-            }]
+                name: 'OUT',
+                data: <%= temp_values %>,
+                pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
+                pointInterval: 3600 * 1000 // one hour
+            }, {
+                name: 'PRESS',
+                data: <%= press_values %>,
+                yAxis: 1,
+                pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
+                pointInterval: 3600 * 1000 // one hour
+            }],
         });
     });
     

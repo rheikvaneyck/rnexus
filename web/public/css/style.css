@@ -57,3 +57,7 @@
 	font-size: x-small;
 	color: #888;
 	}
+.boxed {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}

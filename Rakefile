@@ -55,9 +55,8 @@ namespace :db do
 end
 
 namespace :test do
-  desc "run all tests" 
+  desc "run all specs" 
   RSpec::Core::RakeTask.new(:spec) do |t|
-    t.spec_files = FileList['spec/*_spec.rb']
-    t.options = '-v'
+    t.pattern =  'spec/*_spec.rb'
   end
 end
