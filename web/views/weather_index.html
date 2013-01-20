@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts First Example</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="./jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./highcharts/js/highcharts.src.js"></script>
+	<script type="text/javascript" src="./highcharts/js/highcharts-more.js"></script>
+	<script src="http://code.highcharts.com/modules/data.js"></script>
+		<script type="text/javascript">
+$(function () {
+    
+    // Parse the data from an inline table using the Highcharts Data plugin
+    Highcharts.data({
+    	table: 'freq',
+    	startRow: 1,
+    	endRow: 17,
+    	endColumn: 7,
+    	
+    	complete: function (options) {
+    		
+    		// Some further processing of the options
+    		options.series.reverse(); // to get the stacking right
+    			
+    		
+    		// Create the chart
+    		window.chart = new Highcharts.Chart(Highcharts.merge(options, {
+		        
+			    chart: {
+			        renderTo: 'status_2',
+			        polar: true,
+			        type: 'column'
+			    },
+			    
+			    title: '',
+				legend: { enabled: false },
+				credits: { enabled: false },
+			    xAxis: {
+			    	tickmarkPlacement: 'on',
+						tickInterval: 4,
+						minorTickInterval: 1
+			    },
+			        
+			    yAxis: {
+			        min: 0,
+			        endOnTick: false,
+			    },
+			    
+			    tooltip: {
+			    	valueSuffix: '%'
+			    },
+			        
+			    plotOptions: {
+			        series: {
+			        	stacking: 'normal',
+			        	shadow: false,
+			        	groupPadding: 0,
+			        	pointPlacement: 'on'
+			        }
+			    }
+			}));
+			
+		}
+	});
+});
+$(function () {
+    $(document).ready(function() {
+		    Highcharts.setOptions({
+				  chart: {
+						style: {
+							fontFamily: '"Roboto Condensed", "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+							fontSize: '12px'
+						}
+					}
+				});
+
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'top',
+            },
+            title: {
+                text: 'Last 24',
+            },
+			legend: { 
+				// enabled: false,
+				floating: true,
+				verticalAlign: "top",
+				align: "left",
+				x: 80,
+				y: 40
+			},
+            credits: { 
+               enabled: false
+            },
+            xAxis: {
+               labels: {
+                    formatter: function() {
+                        return this.value;
+                    }                           
+				},
+				tickInterval: 4,
+				minorTickInterval: 1,
+           },
+            yAxis: [{
+                title: {
+                    text: 'Temperature (°Celsius)'
+                }
+            }, {
+                title: {
+                    text: 'Luftfeuchtigkeit (%)',
+					style: {
+						color: '#89A54E'
+					}
+				},
+				opposite: true,
+			}],
+            series: [{
+                name: 'Außentemp',
+                data: [ 9, 9, 9, 10, 10, 10, 10, 11, 11, 12, 12, 12, 13, 13, 14, 14,
+                        15, 15, 16, 17, 17, 18, 18, 19]
+			}, {
+				name: 'Zimmer-Luftfeuchte',
+                color: '#89A54E',
+				data: [ 60, 62, 64, 65, 66, 66, 67, 68, 65, 65, 65, 64, 63, 60, 60, 60, 55, 54, 53, 54, 54, 53, 55, 56, 56 ],
+				yAxis: 1
+            }]
+        });
+    });
+    
+});
+
+$(function () {
+    $(document).ready(function() {
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'bottom_1', // width:198px;height:166px;
+                type: 'column',
+                plotBorderWidth: 2,
+                plotBackgroundColor: '#D6D6EB',
+                plotBorderColor: '#D8D8D8',
+                plotShadow: true,
+                width: 120,
+                height: 140
+            },
+            xAxis: {
+                categories: [ 'Rain' ],
+                tickLength: 0
+            },
+            title: { text: null },
+            legend: { enabled: false },
+            credits: { 
+               enabled: false
+            },
+            yAxis: {
+                title: {
+                    text: "mm",
+                },
+				min:0,
+				max: 10,
+                tickInterval: 2,
+                minorTickInterval: 1,
+				tickWidth: 1,
+                tickLength: 8,
+                minorTickLength: 5,
+                minorTickWidth: 1,
+                minorGridLineWidth: 0
+            },
+            plotOptions: {
+            },
+            series: [{
+               borderColor: '#7070B8',
+               borderRadius: 3,
+               borderWidth: 1,
+               color: {
+                   linearGradient: { x1: 0, y1: 0, x2: 1, y2: 0 },
+                   stops: [ //[ 0.35, '#7070B8' ],
+                            [ 0, '#D6D6EB' ],
+                            [ 0.3, '#5C5CAD' ],
+                            [ 0.45, '#5C5C9C' ],
+                            [ 0.55, '#5C5C9C' ],
+                            [ 0.7, '#5C5CAD' ],
+                            [ 1, '#D6D6EB'] ]
+               },
+               pointWidth: 50, 
+               data: [ 4.7 ]
+            }]
+        });
+    });
+    
+});
+$(function () {
+    $(document).ready(function() {
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'bottom_2'
+            },
+            title: { text: '' },
+            legend: { enabled: false },
+            credits: { 
+               enabled: false
+            },
+           xAxis: {
+				tickInterval: 4,
+				minorTickInterval: 1,
+            },
+            yAxis: [{
+                title: {
+                    text: 'Luftdruck (hPa)'
+                }
+            },{
+                title: {
+                    text: 'Luftfeuchte (%)',
+					style: { 
+						color: '#89A54E'
+					},
+                },
+				opposite: true			
+			}],
+            plotOptions: {
+            },
+            series: [{
+			    type: 'column',
+                name: 'PRESS',
+                data: [ 4351, 4190, 4028, 3895, 3553, 4351, 4190, 4028, 3895, 3553, 4351, 4190, 4028, 3895, 3553,
+                        4323, 4029, 3834, 4009, 5038, 4924, 4351, 4190, 4028, 3895 ]
+            }, {
+				type: 'line',
+				name: 'H5',
+                color: '#89A54E',
+				data: [ 60, 62, 64, 65, 66, 66, 67, 68, 65, 65, 65, 64, 63, 65, 68, 73, 75, 79, 80, 85, 90, 90, 91, 90, 86 ],
+				yAxis: 1
+			}]
+        });
+    });
+    
+});
+		</script>
+		<style type="text/css">
+		body {
+			font-family: 'Roboto Condensed', sans-serif;
+		}
+		#top {
+			margin: 5px;
+			width:805px;
+			height:318px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 3px 3px 5px #888;
+		}
+		.small_tile {
+			margin: 5px;
+			width:190px;
+			height:155px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 3px 3px 5px #888;
+		}
+		#status_3 table td {
+			font-size: small;
+		}
+		#bottom_1 {
+			margin: 5px;
+			float:left;
+			width:165px;
+			height:135px;
+			padding: 10px 0 10px 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 3px 3px 5px #888;
+		}
+		#bottom_2 {
+			margin: 5px;
+			float:left;
+			width:608px;
+			height:156px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 3px 3px 5px #888;			
+		}
+		</style>
+	</head>
+	<body>
+		<div style="display:none">
+		<!-- Source: http://or.water.usgs.gov/cgi-bin/grapher/graph_windrose.pl -->
+		<table id="freq" border="0" cellspacing="0" cellpadding="0">
+			<tr nowrap bgcolor="#CCCCFF">
+				<th colspan="9" class="hdr">Table of Frequencies (percent)</th>
+			</tr>
+			<tr nowrap bgcolor="#CCCCFF">
+				<th class="freq">Direction</th>
+				<th class="freq">&lt; 0.5 m/s</th>
+				<th class="freq">0.5-2 m/s</th>
+				<th class="freq">2-4 m/s</th>
+				<th class="freq">4-6 m/s</th>
+				<th class="freq">6-8 m/s</th>
+				<th class="freq">8-10 m/s</th>
+				<th class="freq">&gt; 10 m/s</th>
+				<th class="freq">Total</th>
+			</tr>
+			<tr nowrap>
+				<td class="dir">N</td>
+				<td class="data">1.81</td>
+				<td class="data">1.78</td>
+				<td class="data">0.16</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">3.75</td>
+			</tr>		
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">NNE</td>
+				<td class="data">0.62</td>
+				<td class="data">1.09</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">1.71</td>
+			</tr>
+			<tr nowrap>
+				<td class="dir">NE</td>
+				<td class="data">0.82</td>
+				<td class="data">0.82</td>
+				<td class="data">0.07</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">1.71</td>
+			</tr>
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">ENE</td>
+				<td class="data">0.59</td>
+				<td class="data">1.22</td>
+				<td class="data">0.07</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">1.88</td>
+			</tr>
+			<tr nowrap>
+				<td class="dir">E</td>
+				<td class="data">0.62</td>
+				<td class="data">2.20</td>
+				<td class="data">0.49</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">3.32</td>
+			</tr>
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">ESE</td>
+				<td class="data">1.22</td>
+				<td class="data">2.01</td>
+				<td class="data">1.55</td>
+				<td class="data">0.30</td>
+				<td class="data">0.13</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">5.20</td>
+			</tr>
+			<tr nowrap>
+				<td class="dir">SE</td>
+				<td class="data">1.61</td>
+				<td class="data">3.06</td>
+				<td class="data">2.37</td>
+				<td class="data">2.14</td>
+				<td class="data">1.74</td>
+				<td class="data">0.39</td>
+				<td class="data">0.13</td>
+				<td class="data">11.45</td>
+			</tr>
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">SSE</td>
+				<td class="data">2.04</td>
+				<td class="data">3.42</td>
+				<td class="data">1.97</td>
+				<td class="data">0.86</td>
+				<td class="data">0.53</td>
+				<td class="data">0.49</td>
+				<td class="data">0.00</td>
+				<td class="data">9.31</td>
+			</tr>
+			<tr nowrap>
+				<td class="dir">S</td>
+				<td class="data">2.66</td>
+				<td class="data">4.74</td>
+				<td class="data">0.43</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">7.83</td>
+			</tr>
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">SSW</td>
+				<td class="data">2.96</td>
+				<td class="data">4.14</td>
+				<td class="data">0.26</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">7.37</td>
+			</tr>
+			<tr nowrap>
+				<td class="dir">SW</td>
+				<td class="data">2.53</td>
+				<td class="data">4.01</td>
+				<td class="data">1.22</td>
+				<td class="data">0.49</td>
+				<td class="data">0.13</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">8.39</td>
+			</tr>
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">WSW</td>
+				<td class="data">1.97</td>
+				<td class="data">2.66</td>
+				<td class="data">1.97</td>
+				<td class="data">0.79</td>
+				<td class="data">0.30</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">7.70</td>
+			</tr>
+			<tr nowrap>
+				<td class="dir">W</td>
+				<td class="data">1.64</td>
+				<td class="data">1.71</td>
+				<td class="data">0.92</td>
+				<td class="data">1.45</td>
+				<td class="data">0.26</td>
+				<td class="data">0.10</td>
+				<td class="data">0.00</td>
+				<td class="data">6.09</td>
+			</tr>
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">WNW</td>
+				<td class="data">1.32</td>
+				<td class="data">2.40</td>
+				<td class="data">0.99</td>
+				<td class="data">1.61</td>
+				<td class="data">0.33</td>
+				<td class="data">0.00</td>
+				<td class="data">0.00</td>
+				<td class="data">6.64</td>
+			</tr>
+			<tr nowrap>
+				<td class="dir">NW</td>
+				<td class="data">1.58</td>
+				<td class="data">4.28</td>
+				<td class="data">1.28</td>
+				<td class="data">0.76</td>
+				<td class="data">0.66</td>
+				<td class="data">0.69</td>
+				<td class="data">0.03</td>
+				<td class="data">9.28</td>
+			</tr>		
+			<tr nowrap bgcolor="#DDDDDD">
+				<td class="dir">NNW</td>
+				<td class="data">1.51</td>
+				<td class="data">5.00</td>
+				<td class="data">1.32</td>
+				<td class="data">0.13</td>
+				<td class="data">0.23</td>
+				<td class="data">0.13</td>
+				<td class="data">0.07</td>
+				<td class="data">8.39</td>
+			</tr>
+			<tr nowrap>
+				<td class="totals">Total</td>
+				<td class="totals">25.53</td>
+				<td class="totals">44.54</td>
+				<td class="totals">15.07</td>
+				<td class="totals">8.52</td>
+				<td class="totals">4.31</td>
+				<td class="totals">1.81</td>
+				<td class="totals">0.23</td>
+				<td class="totals">&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+    <div id="content" style="width:1024px;height:500px;">
+		<div id="status" style="float:left; width:200px;height:497px;">
+			<div id="status_1" class="small_tile"><p style="text-align: center;margin: 0;"Today</p><img src="cloudy.png" style="margin:0px 0px 0px 40px;height:120px;"/></div>
+			<div id="status_2" class="small_tile"></div>
+			<div id="status_3" class="small_tile">
+				<table style="margin:10px;padding:0;">
+					<thead>
+						<tr><th colspan="2">Battery Level</th></tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Station:</td><td><img src="battery-100-r.png" style="margin-left: 10px;height: 20px;"></td>
+					</tr>
+					<tr>
+						<td>Temperatur Sensor:</td><td><img src="battery-80-r.png" style="margin-left: 10px;height: 20px;"></td>
+					</tr>
+					<tr>
+						<td>Rain Sensor:</td><td><img src="battery-40-r.png" style="margin-left: 10px;height: 20px;"></td>
+					</tr>
+					<tr>
+						<td>Anemometer Sensor:</td><td><img src="battery-60-r.png" style="margin-left: 10px;height: 20px;"></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="main" style="float:left; width:820px;height:498px;">
+			<div id="top">24h</div>
+			<div id="bottom">
+				<div id="bottom_1"></div>
+				<div id="bottom_2"></div>
+			</div>
+		</div>
+    </div>
+	</body>
+</html>
+
