@@ -1,9 +1,17 @@
 $(function () {
     var chart;
     $(document).ready(function() {
+		    Highcharts.setOptions({
+				  chart: {
+						style: {
+							fontFamily: '"Roboto Condensed", "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+							fontSize: '12px'
+						}
+					}
+				});
         chart = new Highcharts.Chart({
             chart: {
-                renderTo: 'container',
+                renderTo: 'top',
                 type: 'line',
                 marginRight: 130,
                 marginBottom: 25
@@ -11,6 +19,9 @@ $(function () {
             title: {
                 text: "<%= chart_title %>",
                 x: -20 //center
+            },
+            credits: {
+                enabled: false
             },
             subtitle: {
                 text: 'Source: FTA Nexus',
@@ -24,11 +35,14 @@ $(function () {
             },
             yAxis: [{
                 title: {
-                    text: 'Temperature (°C)'
+                    text: 'Temperatur (°C)',
                 }
             }, {
                 title: {
-                    text: 'Pressure (mbar)'
+                    text: 'Luftdruck (hPa)',
+                    style: {
+                        color: '#89A54E'
+                    }
                 },
                 opposite: true,
             }], 
@@ -40,12 +54,12 @@ $(function () {
                 }
             },
             legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: -10,
-                y: 100,
-                borderWidth: 0
+                /* floating: true,
+                verticalAlign: "top",
+                align: "left",
+                x: 80,
+                y: 40 */
+                enabled: false  
             },
             series: [{
                 name: 'OUT',
@@ -54,6 +68,7 @@ $(function () {
                 pointInterval: 3600 * 1000 // one hour
             }, {
                 name: 'PRESS',
+                color: '#89A54E',
                 data: <%= press_values %>,
                 yAxis: 1,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
