@@ -50,7 +50,7 @@ $(function () {
                 formatter: function() {
                         var d = new Date(this.x)
                         return '<b>'+ this.series.name +'</b><br/>'+
-                        d.toLocaleString() +': '+ this.y +'°C';
+                        d.format("HH:MM") +' Uhr: '+ this.y +'°C';
                 }
             },
             legend: {
@@ -62,14 +62,14 @@ $(function () {
                 enabled: false  
             },
             series: [{
-                name: 'OUT',
+                name: 'Temperatur - außen',
                 data: <%= temp_values %>,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
                 pointInterval: 3600 * 1000 // one hour
             }, {
-                name: 'PRESS',
+                name: 'Luftfeuchte - außen',
                 color: '#89A54E',
-                data: <%= press_values %>,
+                data: <%= humaditity_values %>,
                 yAxis: 1,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
                 pointInterval: 3600 * 1000 // one hour

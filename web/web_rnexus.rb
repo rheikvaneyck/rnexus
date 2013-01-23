@@ -12,6 +12,9 @@ get '/' do
   press_values = press_data.inspect
   humaditity_data =  @plotter.get_last_24h(:H5).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
   humaditity_values = humaditity_data.inspect
+	rain_data = @plotter.get_last_24h(:RC)
+	rain_value = rain_data.first[1] - rain_data.last[1]
+	puts rain_value
   start_unixtime = temp_data.first[0]
   chart_title = "Last 24h"
   erb = ERB.new(File.read("web/temperature_line.js.erb"))
