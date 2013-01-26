@@ -1,3 +1,4 @@
 db/*.sqlite
+db/*.log
 log/*.log
 tmp/

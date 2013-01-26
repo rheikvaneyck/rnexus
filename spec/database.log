@@ -291,3 +291,10 @@ D, [2013-01-05T21:38:15.842077 #5989] DEBUG -- :   [1m[35mRnexus::DBManager::M
 D, [2013-01-05T21:38:15.875970 #5989] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (1.6ms)[0m  [1mSELECT "measurements".* FROM "measurements" ORDER BY DT DESC LIMIT 1[0m
 D, [2013-01-05T21:38:15.904069 #5989] DEBUG -- :   [1m[35mRnexus::DBManager::Measurement Load (1.7ms)[0m  SELECT "measurements".* FROM "measurements" WHERE ("measurements"."DT" BETWEEN 1356632160 AND 1356718560)
 D, [2013-01-05T21:38:15.915120 #5989] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (2.7ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2013-01-13T15:33:44.012370 #23654] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (22.3ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2013-01-13T15:33:44.645841 #23654] DEBUG -- :   [1m[35mRnexus::DBManager::Measurement Load (15.5ms)[0m  SELECT "measurements".* FROM "measurements" 
+D, [2013-01-13T15:33:44.727566 #23654] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (15.2ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
+D, [2013-01-13T15:33:44.810700 #23654] DEBUG -- :   [1m[35mRnexus::DBManager::Measurement Load (7.1ms)[0m  SELECT "measurements".* FROM "measurements" ORDER BY DT DESC LIMIT 1
+D, [2013-01-13T15:33:44.854277 #23654] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (6.8ms)[0m  [1mSELECT "measurements".* FROM "measurements" ORDER BY DT DESC LIMIT 1[0m
+D, [2013-01-13T15:33:45.067569 #23654] DEBUG -- :   [1m[35mRnexus::DBManager::Measurement Load (8.8ms)[0m  SELECT "measurements".* FROM "measurements" WHERE ("measurements"."DT" BETWEEN 1356632160 AND 1356718560)
+D, [2013-01-13T15:33:45.124170 #23654] DEBUG -- :   [1m[36mRnexus::DBManager::Measurement Load (16.0ms)[0m  [1mSELECT "measurements".* FROM "measurements" [0m
