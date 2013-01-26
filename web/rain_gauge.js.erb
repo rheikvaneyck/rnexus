@@ -1,0 +1,59 @@
+$(function () {
+    $(document).ready(function() {
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'bottom_1', // width:198px;height:166px;
+                type: 'column',
+                plotBorderWidth: 2,
+                plotBackgroundColor: '#D6D6EB',
+                plotBorderColor: '#D8D8D8',
+                plotShadow: true,
+                width: 120,
+                height: 140
+            },
+            xAxis: {
+                categories: [ 'Rain' ],
+                tickLength: 0
+            },
+            title: { text: null },
+            legend: { enabled: false },
+            credits: { 
+               enabled: false
+            },
+            yAxis: {
+                title: {
+                    text: "mm",
+                },
+								/* min:0,
+								max: 10, */
+                tickInterval: 2,
+                minorTickInterval: 1,
+								tickWidth: 1,
+                tickLength: 8,
+                minorTickLength: 5,
+                minorTickWidth: 1,
+                minorGridLineWidth: 0
+            },
+            plotOptions: {
+            },
+            series: [{
+               borderColor: '#7070B8',
+               borderRadius: 3,
+               borderWidth: 1,
+               color: {
+                   linearGradient: { x1: 0, y1: 0, x2: 1, y2: 0 },
+                   stops: [ //[ 0.35, '#7070B8' ],
+                            [ 0, '#D6D6EB' ],
+                            [ 0.3, '#5C5CAD' ],
+                            [ 0.45, '#5C5C9C' ],
+                            [ 0.55, '#5C5C9C' ],
+                            [ 0.7, '#5C5CAD' ],
+                            [ 1, '#D6D6EB'] ]
+               },
+               pointWidth: 50, 
+               data: [ <%= rain_value %> ]
+            }]
+        });
+    });
+    
+});

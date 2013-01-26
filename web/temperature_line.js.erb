@@ -1,9 +1,17 @@
 $(function () {
     var chart;
     $(document).ready(function() {
+		    Highcharts.setOptions({
+				  chart: {
+						style: {
+							fontFamily: '"Roboto Condensed", "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+							fontSize: '12px'
+						}
+					}
+				});
         chart = new Highcharts.Chart({
             chart: {
-                renderTo: 'container',
+                renderTo: 'top',
                 type: 'line',
                 marginRight: 130,
                 marginBottom: 25
@@ -11,6 +19,9 @@ $(function () {
             title: {
                 text: "<%= chart_title %>",
                 x: -20 //center
+            },
+            credits: {
+                enabled: false
             },
             subtitle: {
                 text: 'Source: FTA Nexus',
@@ -24,11 +35,14 @@ $(function () {
             },
             yAxis: [{
                 title: {
-                    text: 'Temperature (°C)'
+                    text: 'Temperatur (°C)',
                 }
             }, {
                 title: {
-                    text: 'Pressure (mbar)'
+                    text: 'Luftdruck (hPa)',
+                    style: {
+                        color: '#89A54E'
+                    }
                 },
                 opposite: true,
             }], 
@@ -36,25 +50,26 @@ $(function () {
                 formatter: function() {
                         var d = new Date(this.x)
                         return '<b>'+ this.series.name +'</b><br/>'+
-                        d.toLocaleString() +': '+ this.y +'°C';
+                        d.format("HH:MM") +' Uhr: '+ this.y +'°C';
                 }
             },
             legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: -10,
-                y: 100,
-                borderWidth: 0
+                /* floating: true,
+                verticalAlign: "top",
+                align: "left",
+                x: 80,
+                y: 40 */
+                enabled: false  
             },
             series: [{
-                name: 'OUT',
+                name: 'Temperatur - außen',
                 data: <%= temp_values %>,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
                 pointInterval: 3600 * 1000 // one hour
             }, {
-                name: 'PRESS',
-                data: <%= press_values %>,
+                name: 'Luftfeuchte - außen',
+                color: '#89A54E',
+                data: <%= humaditity_values %>,
                 yAxis: 1,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
                 pointInterval: 3600 * 1000 // one hour

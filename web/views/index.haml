@@ -1,4 +1,45 @@
 :javascript
   #{@temperature_line_js}
+  #{@rain_gauge_js}
+  #{@press_column_js}
 
-#container{class: "boxed", style: "min-width: 400px; height: 400px; margin: 0 auto"}
+#content{style: "width:1024px;height:500px;"}
+  #status{style: "float:left; width:200px;height:497px;"}
+    #status_1{class: "small_tile"}
+      %p{style: "text-align: center;margin-top:5px;"}
+        Today
+      #fc_img{style: "width: 100px;margin-left: auto; margin-right:auto;"}
+        %img{src: "images/cloudy.png", style: "height:100px;"}
+    #status_2{class: "small_tile"}
+    #status_3{class: "small_tile"}
+      %table{style: "margin:10px;padding:0;"}
+        %thead
+          %tr
+            %th{colspan: "2"}
+              Battery Level
+        %tbody
+          %tr
+            %td
+              Station:
+            %td
+              %img{src: "images/battery-100-r.png", style: "margin-left: 10px;height: 20px;"}
+          %tr
+            %td
+              Temperatur Sensor:
+            %td
+              %img{src: "images/battery-80-r.png", style: "margin-left: 10px;height: 20px;"}
+          %tr
+            %td
+              Rain Sensor:
+            %td
+              %img{src: "images/battery-40-r.png", style: "margin-left: 10px;height: 20px;"}
+          %tr
+            %td
+              Anemometer:
+            %td
+              %img{src: "images/battery-60-r.png", style: "margin-left: 10px;height: 20px;"}
+  #main{style: "float:left; width:820px;height:498px;"}
+    #top
+    #bottom
+      #bottom_1
+      #bottom_2

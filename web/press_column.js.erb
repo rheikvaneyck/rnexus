@@ -1,0 +1,50 @@
+$(function () {
+    $(document).ready(function() {
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'bottom_2'
+            },
+            title: { text: '' },
+            legend: { enabled: false },
+            credits: { enabled: false},
+           xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    hour: '%H:%M'   
+                }
+            },
+            yAxis: [{
+                title: {
+                    text: 'Luftdruck (hPa)'
+                },
+								min: "900",
+								max: "1000",
+								startOnTick: false
+            },{
+                title: {
+                    text: 'Luftfeuchte (%)',
+										style: { 
+											color: '#89A54E'
+										},
+                },
+						opposite: true			
+			}],
+            plotOptions: {
+            },
+            series: [{
+			    type: 'column',
+                name: 'PRESS',
+                data: <%= press_values  %>,
+                pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
+                pointInterval: 3600 * 1000 // one hour
+            }, {
+				type: 'line',
+				name: 'H5',
+                color: '#89A54E',
+								data: <%= humaditity_values %>,
+								yAxis: 1,	
+						}]
+        });
+    });
+    
+});
