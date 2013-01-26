@@ -27,10 +27,10 @@ namespace :db do
     ActiveRecord::Migrator.migrate('db/migrate', ENV["VERSION"] ? ENV["VERSION"].to_i : nil )
   end
   
-  desc "Fill the database with test data"
-  task :load_test_data => :environment do
+  desc "Fill the database with data"
+  task :load_data => :environment do
     scheme_description = YAML.load_file(File.join('config','scheme_description.yml'))
-    data = CSV.read(File.join('data','weatherAll.data'), { col_sep: ':' })
+    data = CSV.read(File.join('data','weather.data'), { col_sep: ':' })
     
     class Measurement < ActiveRecord::Base
       validates_uniqueness_of :DT # FIXME: make this more generell

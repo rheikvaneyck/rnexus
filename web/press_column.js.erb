@@ -17,9 +17,8 @@ $(function () {
                 title: {
                     text: 'Luftdruck (hPa)'
                 },
-								min: "900",
-								max: "1000",
-								startOnTick: false
+		min: <%= "#{(press_data.min / 100).floor * 100}" %> ,
+		startOnTick: false
             },{
                 title: {
                     text: 'Luftfeuchte (%)',
