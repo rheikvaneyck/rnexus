@@ -1,0 +1,13 @@
+class CreateStates < ActiveRecord::Migration
+  def up
+    create_table :states do |t|
+      <% states_description.each do |key, value| %><%="t.#{value} :#{key}" %>
+      <% end %>
+      t.timestamps
+    end
+  end
+
+  def down
+    drop_table :states
+  end
+end

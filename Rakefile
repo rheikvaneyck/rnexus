@@ -47,6 +47,26 @@ namespace :db do
     end
 
   end
+
+  desc "Fill the database with states"
+  task :load_states => :environment do
+    scheme_description = YAML.load_file(File.join('config','states_description.yml'))
+    data = CSV.read(File.join('data','weather.status'), { col_sep: ':' })
+    
+    class State < ActiveRecord::Base
+    end
+    
+    data.each do |d|
+      i = 0
+      scheme_description.each do |key, value|
+        scheme_description[key] = d[i] unless d[i] == "i"
+        i += 1
+      end
+      
+      State.create scheme_description
+    end
+
+  end
   
   task :environment do
     ActiveRecord::Base.establish_connection(YAML::load(File.open(File.join('config','database.yml'))))

@@ -18,5 +18,7 @@ module Rnexus
     class Measurement < ActiveRecord::Base
       validates_uniqueness_of :DT # FIXME: make this more generell
     end
+    class State < ActiveRecord::Base
+    end
   end
 end
