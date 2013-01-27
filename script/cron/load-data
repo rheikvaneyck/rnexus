@@ -1,0 +1,34 @@
+#!/bin/bash
+APPDIR=/home/pi/source/rnexus
+SOURCEDIR=/var/log
+DATAFILE=weather.data
+STATEFILE=weather.status
+DESTDIR=${APPDIR}/data
+TIMEFILE=${DESTDIR}/last_import
+
+if [ -r /home/pi/.bash_profile ] 
+then
+  . /home/pi/.bash_profile
+fi
+
+if [ ! -r "${SOURCEDIR}/${DATAFILE}" ]
+then
+  exit
+fi
+
+cd "$APPDIR"
+
+if [ -r "$TIMEFILE" ]
+then
+  awk -F":" 'BEGIN { getline LAST<"data/last_import"}{ if ($1 > LAST){print $0} }' "${SOURCEDIR}/${DATAFILE}" > "${DESTDIR}/${DATAFILE}"
+else
+  cp "${SOURCEDIR}/${DATAFILE}" "${DESTDIR}/"
+fi
+
+cp "${SOURCEDIR}/${STATEFILE}" "${DESTDIR}"
+
+rake db:load_data
+rake db:load_states
+
+date +"%s" > "${TIMEFILE}"
+rm "${DESTDIR}/${DATAFILE}"

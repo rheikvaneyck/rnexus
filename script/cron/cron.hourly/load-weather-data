@@ -1,0 +1,34 @@
+#!/bin/sh
+APP=/usr/bin/te923con
+LOG="/var/log/weather.data"
+USB=`/usr/bin/lsusb | grep "1130:6801"`
+
+echo -n "Check if $APP exists and is executable"
+if [ -x $APP ];
+then
+	echo "..yes"
+else
+	echo "..no"
+	exit 1
+fi
+
+touch $LOG
+echo -n "Check if $LOG exists and is writable"
+if [ -w $LOG ];
+then
+	echo "...yes"
+else
+	echo "..no"
+	exit 1
+fi
+
+echo -n "Check if $USB exists"
+if [ -n "$USB" ];
+then
+	echo "...yes"
+else
+	echo "...no"
+	exit 1
+fi
+
+$APP >> $LOG
