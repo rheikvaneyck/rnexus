@@ -1,0 +1,101 @@
+/home/pi/.rbenv/versions/1.9.3-p362/bin/ruby -Ilib web/web_rnexus.rb
+== Sinatra/1.3.3 has taken the stage on 4567 for development with backup from Thin
+192.168.2.105 - - [27/Jan/2013 22:57:01] "GET / HTTP/1.1" 200 10673 3.0313
+192.168.2.105 - - [27/Jan/2013 22:57:02] "GET / HTTP/1.1" 200 10673 0.8571
+192.168.2.105 - - [27/Jan/2013 22:57:02] "GET /css/style.css HTTP/1.1" 200 1679 0.0444
+192.168.2.105 - - [27/Jan/2013 22:57:02] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0144
+192.168.2.105 - - [27/Jan/2013 22:57:04] "GET /images/rain.png HTTP/1.1" 200 21030 0.0080
+192.168.2.105 - - [27/Jan/2013 22:57:06] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0082
+192.168.2.105 - - [27/Jan/2013 22:57:06] "GET /favicon.ico HTTP/1.1" 404 451 0.0104
+192.168.2.105 - - [27/Jan/2013 22:57:06] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 472 0.0104
+192.168.2.105 - - [27/Jan/2013 22:57:06] "GET /apple-touch-icon.png HTTP/1.1" 404 460 0.0103
+192.168.2.109 - - [28/Jan/2013 07:50:03] "GET / HTTP/1.1" 200 10732 1.1915
+192.168.2.109 - - [28/Jan/2013 07:50:04] "GET /css/style.css HTTP/1.1" 200 1679 0.0096
+192.168.2.109 - - [28/Jan/2013 07:50:04] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0112
+192.168.2.109 - - [28/Jan/2013 07:50:06] "GET /images/clouds.png HTTP/1.1" 200 27330 0.0084
+192.168.2.109 - - [28/Jan/2013 07:50:07] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0082
+192.168.2.109 - - [28/Jan/2013 07:50:07] "GET /favicon.ico HTTP/1.1" 404 451 0.0109
+192.168.2.109 - - [28/Jan/2013 07:51:07] "GET / HTTP/1.1" 200 10732 0.8782
+192.168.2.109 - - [28/Jan/2013 07:51:07] "GET /css/style.css HTTP/1.1" 200 1679 0.0098
+192.168.2.109 - - [28/Jan/2013 07:51:07] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0116
+192.168.2.109 - - [28/Jan/2013 07:51:09] "GET /images/clouds.png HTTP/1.1" 200 27330 0.0086
+192.168.2.109 - - [28/Jan/2013 07:51:09] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0080
+192.168.2.109 - - [28/Jan/2013 07:51:09] "GET /favicon.ico HTTP/1.1" 404 451 0.0109
+192.168.2.109 - - [28/Jan/2013 19:58:03] "GET / HTTP/1.1" 200 10669 0.8640
+192.168.2.109 - - [28/Jan/2013 19:58:03] "GET /css/style.css HTTP/1.1" 200 1679 0.1096
+192.168.2.109 - - [28/Jan/2013 19:58:03] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0128
+192.168.2.109 - - [28/Jan/2013 19:58:07] "GET /images/cloudy.png HTTP/1.1" 200 39970 0.0110
+192.168.2.109 - - [28/Jan/2013 19:58:07] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0086
+192.168.2.109 - - [28/Jan/2013 19:58:08] "GET /favicon.ico HTTP/1.1" 404 451 0.0122
+
+== Sinatra has ended his set (crowd applauds)
+>> Thin web server (v1.5.0 codename Knife)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:4567, CTRL+C to stop
+0
+0
+-5
+-5
+-8
+>> Stopping ...
+/home/pi/.rbenv/versions/1.9.3-p362/bin/ruby -Ilib web/web_rnexus.rb
+== Sinatra/1.3.3 has taken the stage on 4567 for development with backup from Thin
+192.168.2.109 - - [01/Feb/2013 23:35:47] "GET / HTTP/1.1" 200 11944 3.3149
+192.168.2.109 - - [01/Feb/2013 23:35:47] "GET /css/style.css HTTP/1.1" 200 1679 0.0442
+192.168.2.109 - - [01/Feb/2013 23:35:47] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0124
+192.168.2.109 - - [01/Feb/2013 23:35:47] "GET /js/highcharts-more.js HTTP/1.1" 200 14136 0.0081
+192.168.2.109 - - [01/Feb/2013 23:35:49] "GET /images/rain.png HTTP/1.1" 200 21030 0.0084
+192.168.2.109 - - [01/Feb/2013 23:35:49] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0081
+192.168.2.109 - - [01/Feb/2013 23:35:50] "GET /favicon.ico HTTP/1.1" 404 451 0.0108
+192.168.2.109 - - [01/Feb/2013 23:36:04] "GET / HTTP/1.1" 200 11944 1.2232
+192.168.2.109 - - [01/Feb/2013 23:36:04] "GET /css/style.css HTTP/1.1" 200 1679 0.0097
+192.168.2.109 - - [01/Feb/2013 23:36:04] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0121
+192.168.2.109 - - [01/Feb/2013 23:36:04] "GET /js/highcharts-more.js HTTP/1.1" 200 14136 0.0092
+192.168.2.109 - - [01/Feb/2013 23:36:04] "GET /images/rain.png HTTP/1.1" 200 21030 0.0088
+192.168.2.109 - - [01/Feb/2013 23:36:05] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.2113
+192.168.2.109 - - [01/Feb/2013 23:36:05] "GET /favicon.ico HTTP/1.1" 404 451 0.0120
+192.168.2.109 - - [01/Feb/2013 23:36:30] "GET / HTTP/1.1" 200 11944 1.1604
+192.168.2.109 - - [01/Feb/2013 23:36:30] "GET /css/style.css HTTP/1.1" 200 1679 0.0096
+192.168.2.109 - - [01/Feb/2013 23:36:30] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0188
+192.168.2.109 - - [01/Feb/2013 23:36:30] "GET /js/highcharts-more.js HTTP/1.1" 200 14136 0.0130
+192.168.2.109 - - [01/Feb/2013 23:36:31] "GET /images/rain.png HTTP/1.1" 200 21030 0.0084
+192.168.2.109 - - [01/Feb/2013 23:36:31] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0085
+192.168.2.109 - - [01/Feb/2013 23:36:32] "GET /favicon.ico HTTP/1.1" 404 451 0.0107
+192.168.2.105 - - [03/Feb/2013 20:43:36] "GET / HTTP/1.1" 200 11964 1.1536
+192.168.2.105 - - [03/Feb/2013 20:43:37] "GET /css/style.css HTTP/1.1" 304 - 0.0090
+192.168.2.105 - - [03/Feb/2013 20:43:37] "GET /js/highcharts.js HTTP/1.1" 304 - 0.0064
+192.168.2.105 - - [03/Feb/2013 20:43:37] "GET /js/highcharts-more.js HTTP/1.1" 304 - 0.0068
+192.168.2.105 - - [03/Feb/2013 20:43:40] "GET /images/cloudy.png HTTP/1.1" 200 39970 0.0092
+192.168.2.105 - - [03/Feb/2013 20:43:40] "GET /images/battery-100-r.png HTTP/1.1" 304 - 0.0065
+192.168.2.105 - - [03/Feb/2013 20:43:40] "GET /favicon.ico HTTP/1.1" 404 451 0.0109
+192.168.2.105 - - [03/Feb/2013 21:02:57] "GET / HTTP/1.1" 200 11964 1.2523
+192.168.2.105 - - [03/Feb/2013 21:02:57] "GET /css/style.css HTTP/1.1" 200 1679 0.0096
+192.168.2.105 - - [03/Feb/2013 21:02:57] "GET /js/highcharts-more.js HTTP/1.1" 200 14136 0.0096
+192.168.2.105 - - [03/Feb/2013 21:02:57] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0114
+192.168.2.105 - - [03/Feb/2013 21:02:59] "GET /images/cloudy.png HTTP/1.1" 200 39970 0.0090
+192.168.2.105 - - [03/Feb/2013 21:03:00] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0087
+192.168.2.105 - - [03/Feb/2013 21:03:00] "GET /favicon.ico HTTP/1.1" 404 451 0.0114
+192.168.2.105 - - [05/Feb/2013 23:35:09] "GET / HTTP/1.1" 200 11980 1.4282
+192.168.2.105 - - [05/Feb/2013 23:35:09] "GET /css/style.css HTTP/1.1" 200 1679 0.0095
+192.168.2.105 - - [05/Feb/2013 23:35:09] "GET /js/highcharts-more.js HTTP/1.1" 200 14136 0.0162
+192.168.2.105 - - [05/Feb/2013 23:35:09] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0127
+192.168.2.105 - - [05/Feb/2013 23:35:12] "GET /images/clouds.png HTTP/1.1" 200 27330 0.0084
+192.168.2.105 - - [05/Feb/2013 23:35:12] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0084
+192.168.2.105 - - [05/Feb/2013 23:35:13] "GET /favicon.ico HTTP/1.1" 404 451 0.0103
+192.168.2.105 - - [06/Feb/2013 19:51:38] "GET / HTTP/1.1" 200 11972 1.1878
+192.168.2.105 - - [06/Feb/2013 19:51:39] "GET /css/style.css HTTP/1.1" 304 - 0.0146
+192.168.2.105 - - [06/Feb/2013 19:51:39] "GET /js/highcharts-more.js HTTP/1.1" 304 - 0.0091
+192.168.2.105 - - [06/Feb/2013 19:51:39] "GET /js/highcharts.js HTTP/1.1" 304 - 0.0073
+192.168.2.105 - - [06/Feb/2013 19:51:39] "GET /images/clouds.png HTTP/1.1" 200 27330 0.0086
+192.168.2.105 - - [06/Feb/2013 19:51:39] "GET /images/battery-100-r.png HTTP/1.1" 304 - 0.0069
+192.168.2.105 - - [06/Feb/2013 19:51:43] "GET /favicon.ico HTTP/1.1" 404 451 0.0105
+192.168.2.105 - - [06/Feb/2013 19:55:29] "GET / HTTP/1.1" 200 11972 1.3509
+192.168.2.105 - - [06/Feb/2013 19:55:34] "GET /favicon.ico HTTP/1.1" 404 451 0.0124
+192.168.2.105 - - [14/Feb/2013 21:45:27] "GET / HTTP/1.1" 200 11931 1.3608
+192.168.2.105 - - [14/Feb/2013 21:45:28] "GET /css/style.css HTTP/1.1" 200 1679 0.0123
+192.168.2.105 - - [14/Feb/2013 21:45:28] "GET /js/highcharts.js HTTP/1.1" 200 124133 0.0121
+192.168.2.105 - - [14/Feb/2013 21:45:28] "GET /js/highcharts-more.js HTTP/1.1" 200 14136 0.2114
+192.168.2.105 - - [14/Feb/2013 21:45:28] "GET /images/cloudy.png HTTP/1.1" 200 39970 0.0113
+192.168.2.105 - - [14/Feb/2013 21:45:28] "GET /images/battery-100-r.png HTTP/1.1" 200 21971 0.0089
+192.168.2.105 - - [14/Feb/2013 21:45:29] "GET /favicon.ico HTTP/1.1" 404 451 0.0113
+192.168.2.105 - - [14/Feb/2013 21:47:11] "GET /favicon.ico HTTP/1.1" 404 451 0.0223

@@ -32,13 +32,13 @@ $(function () {
             },
             series: [{
 			    type: 'column',
-                name: 'PRESS',
+                name: 'Luftdruck',
                 data: <%= press_values  %>,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
                 pointInterval: 3600 * 1000 // one hour
             }, {
 				type: 'line',
-				name: 'H5',
+				name: 'Luftfeuchte - außen',
                 color: '#89A54E',
 								data: <%= humaditity_values %>,
 								yAxis: 1,	

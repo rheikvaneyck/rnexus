@@ -1,0 +1,43 @@
+$(function () {
+  $(document).ready(function() {
+	  var chart = new Highcharts.Chart({
+		        
+	  chart: {
+		  renderTo: 'status_2',
+			type: 'column',
+			polar: true,
+		},
+    title: '',
+		legend: { enabled: false },
+		credits: { enabled: false },
+    xAxis: {
+      labels: { step: 2 },
+		  tickmarkPlacement: 'on',
+      lineWidth: 0,
+      categories: ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"],
+    },
+		yAxis: {
+		  min: 0,
+      labels: {
+        y: 20,
+        formatter: function() {
+          if(this.isLast) {
+            return this.value;
+          } else {
+            return null;
+          }
+        }
+      }
+		},
+			    
+		tooltip: {
+			  valueSuffix: ' m/s'
+		},
+		series: [{
+      name: 'wind',
+      data: <%= wind_values %>,
+      pointPlacement: 'on'
+		}]
+  });
+  });
+});
