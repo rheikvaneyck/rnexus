@@ -7,10 +7,10 @@ require 'rnexus'
 get '/' do
   battery_states = ["/images/battery-0-r.png","/images/battery-100-r.png"]
   weather_forecast = [
+    "/images/snow-shower.png",
+    "/images/snow.png",
     "/images/rain.png",
-    "/images/rain.png",
-    "/images/rain.png",
-    "/images/rain.png",
+    "/images/drizzle.png",
     "/images/clouds.png",
     "/images/cloudy.png",
     "/images/sunny.png" ]
