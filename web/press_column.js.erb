@@ -17,7 +17,7 @@ $(function () {
                 title: {
                     text: 'Luftdruck (hPa)'
                 },
-		min: <%= "#{(press_data.min / 100).floor * 100}" %> ,
+		min: <%= "#{(press_data.min / 10).floor * 10}" %> ,
 		startOnTick: false
             },{
                 title: {
