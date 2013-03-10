@@ -36,9 +36,11 @@ module Rnexus
       return data
     end
     
-    def get_days_min_max(type = :T0)
+    def get_days_min_max(cnt_days = 7, type = :T0)
       # returns array
-      data = Rnexus::DBManager::Measurement.all.map {|m| [m.DT, m.send(type.to_sym)]}
+      end_timestamp = get_last_measurement.DT
+      start_timestamp = end_timestamp - (86400 * cnt_days)
+      data = Rnexus::DBManager::Measurement.where(:DT => start_timestamp..end_timestamp).map {|m| [m.DT, m.send(type.to_sym)]}
       days = {}
       data.each do |d|
         if days[df_str_s(d[0])].nil?

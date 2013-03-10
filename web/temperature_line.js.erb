@@ -35,11 +35,46 @@ $(function () {
             },
             yAxis: [{
                 title: {
-                    text: 'Temperatur (°C)',
-                }
+                    text: '', // 'Temperatur',
+                    style: {
+                        color: '#AA4643'
+                    }
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value +' °C';
+                    },
+                    style: {
+                        color: '#AA4643'
+                    }
+                },
+            }, {
+                gridLineWidth: 0,
+                title: {
+                    text: '', // 'Luftdruck',
+                },
+                min: <%= "#{(press_data.min / 10).floor * 10}" %> ,
+                startOnTick: false,
+                labels: {
+                    formatter: function() {
+                        return this.value +' hPa';
+                    },
+                    style: {
+                        color: '#4572A7'
+                    }
+                },
+                opposite: true,
             }, {
                 title: {
-                    text: 'Luftfeuchte (%)',
+                    text: '', // 'Luftfeuchte'
+                    style: {
+                        color: '#89A54E'
+                    }
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value +' %';
+                    },
                     style: {
                         color: '#89A54E'
                     }
@@ -48,29 +83,51 @@ $(function () {
             }], 
             tooltip: {
                 formatter: function() {
-                        var d = new Date(this.x)
-                        return '<b>'+ this.series.name +'</b><br/>'+
-                        d.format("HH:MM") +' Uhr: '+ this.y +'°C';
+                  var unit = {
+                    'Luftdruck': 'hPa',
+                    'Luftfeuchte': '%',
+                    'Temperatur': '°C'
+                  }[this.series.name];
+                  var d = new Date(this.x);
+                  return '<b>'+ this.series.name +'</b><br/>'+
+                  d.format("HH:MM") +' Uhr: '+ this.y +' ' + unit;
                 }
             },
             legend: {
-                /* floating: true,
-                verticalAlign: "top",
-                align: "left",
+                layout: 'vertical',
+                align: 'left',
                 x: 80,
-                y: 40 */
-                enabled: false  
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                backgroundColor: '#FFFFFF'
             },
             series: [{
-                name: 'Temperatur - außen',
-                data: <%= temp_values %>,
+                name: 'Luftdruck',
+                type: 'column',
+                yAxis: 1,
+                data: <%= press_values  %>,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
                 pointInterval: 3600 * 1000 // one hour
             }, {
-                name: 'Luftfeuchte - außen',
+                name: 'Luftfeuchte',
+                type: 'spline',
+                marker: {
+                    enabled: false
+                },
+                dashStyle: 'shortdot',
                 color: '#89A54E',
                 data: <%= humaditity_values %>,
-                yAxis: 1,
+                yAxis: 2,
+                pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
+                pointInterval: 3600 * 1000 // one hour
+            }, {
+                name: 'Temperatur',
+                color: '#AA4643',
+                marker: {
+                  symbol: 'circle'
+                },
+                data: <%= temp_values %>,
                 pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
                 pointInterval: 3600 * 1000 // one hour
             }],

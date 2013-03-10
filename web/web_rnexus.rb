@@ -50,15 +50,22 @@ weather_forcast:
   wind_sums = Array.new(16,0) 
   wind_groups.each {|k,v| sum = 0.0; v.map {|i| sum += i[1].to_f }; wind_sums[k.to_i - 1] = (sum / v.length) }
   wind_values = wind_sums.inspect
+  
+  week_extrems_data = @plotter.get_days_min_max(7, :T5)
+  week_dates = week_extrems_data.map{|d| DateTime.parse(d[0]).to_time.to_i * 1000}
+  week_dates_values = week_dates.inspect
+  weeks_min_values = week_extrems_data.map{|d| d[1]}.inspect
+  weeks_max_values = week_extrems_data.map{|d| d[2]}.inspect
 
   start_unixtime = temp_data.first[0]
+  week_start_unixtime = week_dates.first
   chart_title = "Last 24h"
   erb = ERB.new(File.read("web/temperature_line.js.erb"))
   @temperature_line_js = erb.result(binding)
   erb = ERB.new(File.read("web/rain_gauge.js.erb"))
   @rain_gauge_js = erb.result(binding)  
-  erb = ERB.new(File.read("web/press_column.js.erb"))
-  @press_column_js = erb.result(binding)  
+  erb = ERB.new(File.read("web/temp_extrems.js.erb"))
+  @temp_extrems_js = erb.result(binding)  
   erb = ERB.new(File.read("web/wind_polar.js.erb"))
   @wind_polar_js = erb.result(binding)  
 

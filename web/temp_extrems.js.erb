@@ -1,0 +1,62 @@
+$(function () {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'bottom_2',
+            },
+            title: {
+                text: 'Last Week',
+            },
+            credits: { enabled: false },
+            legend: { enabled: false },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: {
+                    day: '%e. %b'   
+                }
+            },
+            yAxis: [{
+              title: {
+                  text: 'Temperatur',
+              },
+              labels: {
+                  formatter: function() {
+                      return this.value +' °C';
+                  },
+              },
+              tickInterval: 5
+            }], 
+            tooltip: {
+                formatter: function() {
+                  var d = new Date(this.x);
+                  return '<b>'+ this.series.name +'</b><br/>'+
+                  this.y +' °C';
+                }
+            },
+            legend: {
+                align: 'left',
+                x: 80,
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                backgroundColor: '#FFFFFF'
+            },
+            series: [{
+                name: 'Max',
+                type: 'line',
+                color: '#AA4643',
+                data: <%= weeks_max_values %>,
+                pointStart: <%= week_start_unixtime %>, // Date.UTC(2010, 0, 1),
+                pointInterval: 84600 * 1000 // one hour
+            }, {
+                name: 'Min',
+                type: 'line',
+                data: <%= weeks_min_values  %>,
+                pointStart: <%= week_start_unixtime %>, // Date.UTC(2010, 0, 1),
+                pointInterval: 84600 * 1000 // one hour
+            }],
+        });
+    });
+    
+});

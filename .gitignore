@@ -1,3 +1,4 @@
 db/*.sqlite
 log/*.log
 tmp/
+nohup.out

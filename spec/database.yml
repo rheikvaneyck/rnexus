@@ -1,2 +1,3 @@
 adapter: sqlite3
 database:  spec/weather_db.sqlite
+log_dir: log
