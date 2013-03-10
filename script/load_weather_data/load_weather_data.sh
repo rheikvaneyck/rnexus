@@ -1,7 +1,7 @@
 #!/bin/sh
 XDIR=`dirname "${0}"`
 APP="${XDIR}/te923con"
-LOG="${XDIR}/../../data/weather.data
+LOG="${XDIR}/../../data/weather.data"
 USB=/dev/usb/hiddev0
 
 echo -n "Check if $APP exists and is executable"
