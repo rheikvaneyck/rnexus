@@ -1,6 +1,5 @@
-- Create helper functions
 - make acriverecord modular
 - create data analyszer
 - create image compiler
 - finish command line app
-- finish sinatra app
+

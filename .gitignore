@@ -1,4 +1,8 @@
 db/*.sqlite
 log/*.log
+log/*.pid
 tmp/
 nohup.out
+.komodotools
+rneux.sublime-project
+rneux.sublime-workspace
