@@ -1,3 +1,4 @@
+- write documentation
 - make acriverecord modular
 - create data analyszer
 - create image compiler
