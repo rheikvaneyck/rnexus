@@ -1,6 +1,18 @@
 #!/bin/env ruby
-require 'bundler/setup'
-require 'rnexus'
+# require 'bundler/setup'
+# require 'rnexus'
 
-runner = Rnexus::Runner.new(ARGV)
-runner.run
+# For a command line program 
+# runner = Rnexus::Runner.new(ARGV)
+# runner.run
+
+# Just start the sinatra app
+DISCLAMER = <<-EOS 
+rnexus  Copyright (C) 2013 Marcus Nasarek
+
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions.
+EOS
+puts DISCLAMER
+system("rackup -Ilib -s thin -p 4567 -E development -P log/rack.pid web/config.ru")
