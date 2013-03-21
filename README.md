@@ -78,4 +78,4 @@ The second script `load-data` copies that data file to the application directory
 
 ###Run the application
 
-The application can be started with `rake web:run`. The web application listens on http://localhost:4567/.
+The application can be started with `rake web:run`. The web application listens on http://localhost:4567/
