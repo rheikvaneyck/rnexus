@@ -1,5 +1,7 @@
 #!/bin/bash
+# EDIT THIS PATH
 APPDIR=/home/pi/source/rnexus
+
 SOURCEDIR=/var/log
 DATAFILE=weather.data
 STATEFILE=weather.status
