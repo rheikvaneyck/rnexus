@@ -5,7 +5,6 @@ require 'rnexus'
 
 class WeatherDashController < ApplicationController
   get '/' do
-    puts ENV.inspect
     battery_states = ["/images/battery-0-r.png","/images/battery-100-r.png"]
     weather_forecast = [
       "/images/snow-shower.png",
