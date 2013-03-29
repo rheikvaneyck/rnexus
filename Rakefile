@@ -3,7 +3,6 @@ require 'active_record'
 require 'yaml'
 require 'logger'
 require 'rake'
-require 'rspec/core/rake_task'
 
 task :default => "orga:show_todos"
 
@@ -76,8 +75,13 @@ namespace :db do
 end
 
 namespace :test do
-  desc "run all specs" 
-  RSpec::Core::RakeTask.new(:spec) do |t|
-    t.pattern =  'spec/*_spec.rb'
-  end
+  begin
+    require 'rspec/core/rake_task'
+    
+    desc "run all specs" 
+    RSpec::Core::RakeTask.new(:spec) do |t|
+      t.pattern =  'spec/*_spec.rb'
+    end
+  rescue LoadError
+  end  
 end
