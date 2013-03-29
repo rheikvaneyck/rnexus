@@ -1,5 +1,6 @@
 require 'csv'
 require 'active_record'
+require 'uri'
 require 'yaml'
 require 'logger'
 require 'rake'
