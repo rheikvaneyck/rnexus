@@ -80,13 +80,12 @@ namespace :db do
         :password => db.password,
         :database => db.path[1..-1],
         :encoding => 'utf8',
-        :log_dir => "log"
       }
     else
       db_config = YAML::load(File.open(File.join('config','database.yml')))
+      ActiveRecord::Base.logger = Logger.new(File.open(File.join('log','database.log'), 'a'))
     end
     ActiveRecord::Base.establish_connection(db_config)
-    ActiveRecord::Base.logger = Logger.new(File.open(File.join('log','database.log'), 'a'))
   end  
 end
 

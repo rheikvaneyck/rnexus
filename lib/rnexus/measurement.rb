@@ -25,11 +25,11 @@ module Rnexus
         }
       else
         db_config = YAML::load(File.open(File.join(config_path,'database.yml')))
+        log_dir = db_config["log_dir"]
+        ActiveRecord::Base.logger = Logger.new(File.open(File.join(log_dir,'database.log'), 'a'))
       end
 
       ActiveRecord::Base.establish_connection(db_config)
-      log_dir = db_config["log_dir"]
-      ActiveRecord::Base.logger = Logger.new(File.open(File.join(log_dir,'database.log'), 'a'))
     end
     class Measurement < ActiveRecord::Base
       validates_uniqueness_of :DT # FIXME: make this more generell
