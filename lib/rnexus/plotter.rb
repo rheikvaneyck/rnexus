@@ -13,7 +13,7 @@ module Rnexus
     end
     def get_last_measurement()
       # returns Measurement Object
-      measurement = Rnexus::DBManager::Measurement.order("DT DESC").first
+      measurement = Rnexus::DBManager::Measurement.order("\"DT\" DESC").first
       return measurement
     end
     
