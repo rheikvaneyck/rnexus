@@ -29,13 +29,13 @@ class WeatherDashController < ApplicationController
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT5],battery_states[@state.BATR],battery_states[@state.BATW]]
     
     temp_data = @plotter.get_last_24h(:T5).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
-    temp_values = temp_data.sort.inspect
+    temp_values = temp_data.inspect
     
     press_data =  @plotter.get_last_24h(:PRESS).map {|d| d[1] }
     press_values = press_data.inspect
     
     humaditity_data =  @plotter.get_last_24h(:H5).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
-    humaditity_values = humaditity_data.sort.inspect
+    humaditity_values = humaditity_data.inspect
   	
     rain_data = @plotter.get_last_24h(:RC)
   	rain_value = rain_data.last[1] - rain_data.first[1]
