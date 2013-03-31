@@ -1,0 +1,40 @@
+#!/bin/bash
+# copy this to $HOME/bin and make a crontab entry
+# with crontab -e
+# add a line like this:
+#----------------
+# 30 * * * * /home/pi/bin/load-heroku > /dev/null 2>&1
+#----------------
+# Edit the variables and home paths before:
+APPDIR=/home/pi/source/rnexus/script/HerokuLoader
+SOURCEDIR=/var/log
+DATAFILE=weather.data
+STATEFILE=weather.status
+DESTDIR=${APPDIR}
+TIMEFILE=${DESTDIR}/last_import
+
+if [ -r /home/pi/.bash_profile ] 
+then
+  . /home/pi/.bash_profile
+fi
+
+if [ ! -r "${SOURCEDIR}/${DATAFILE}" ]
+then
+  echo "Data file not readable"
+  exit
+fi
+
+cd "$APPDIR"
+
+if [ -r "$TIMEFILE" ]
+then
+  awk -F":" 'BEGIN { getline LAST<"data/last_import"}{ if ($1 > LAST){print $0} }' "${SOURCEDIR}/${DATAFILE}" > "${DESTDIR}/${DATAFILE}"
+else
+  cp "${SOURCEDIR}/${DATAFILE}" "${DESTDIR}/"
+fi
+
+cp "${SOURCEDIR}/${STATEFILE}" "${DESTDIR}"
+
+ruby load_data_to_heroku.rb
+
+date +"%s" > "${TIMEFILE}"
