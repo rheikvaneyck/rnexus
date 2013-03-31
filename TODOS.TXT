@@ -1,6 +1,4 @@
 - write documentation
-- make acriverecord modular
-- create data analyszer
-- create image compiler
-- finish command line app
-
+- write a wiki
+- create better images
+- create data analyzer
