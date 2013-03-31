@@ -1,0 +1,5 @@
+# config.yml
+scheme_descr_file: "../scheme_description.yml"
+states_descr_file: "../states_description.yml"
+weather_data_file: "../weather.data"
+weather_status_file: "../weather.status"

@@ -10,7 +10,7 @@ group :production do
 end
 
 group :development, :test do
-#  gem "sqlite3", "1.3.6"
-  gem 'pg', "0.15.0"
+  gem "sqlite3", "1.3.6"
+  # gem 'pg', "0.15.0"
   gem "rspec", "2.12.0"  
 end
