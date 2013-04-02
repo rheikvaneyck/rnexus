@@ -1,0 +1,1 @@
+web: bundle exec rackup -Ilib -s thin -E development web/config.ru -p $PORT

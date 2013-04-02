@@ -15,4 +15,4 @@ This is free software, and you are welcome to redistribute it
 under certain conditions.
 EOS
 puts DISCLAMER
-system("rackup -Ilib -s thin -p 4567 -E development -P log/rack.pid web/config.ru")
+system("bundle exec rackup -Ilib -s thin -p 4567 -E development -P log/rack.pid web/config.ru")

@@ -1,0 +1,14 @@
+SYSSW: string # software version of system controller
+BARSW: string # software version of barometer
+EXTSW: string # software version of UV and channel controller
+RCCSW: string # software version of rain controller
+WINSW: string # software version of wind controller
+BATR: integer # battery of rain sensor (1-good (not present), 0-low)
+BATU: integer # battery of UV sensor (1-good (not present), 0-low)
+BATW: integer # battery of wind sensor (1-good (not present), 0-low)
+BAT5: integer # battery of sensor 5 (1-good (not present), 0-low)
+BAT4: integer # battery of sensor 4 (1-good (not present), 0-low)
+BAT3: integer # battery of sensor 3 (1-good (not present), 0-low)
+BAT2: integer # battery of sensor 2 (1-good (not present), 0-low)
+BAT1: integer # battery of sensor 1 (1-good (not present), 0-low)
+

@@ -1,9 +1,9 @@
 require 'csv'
 require 'active_record'
+require 'uri'
 require 'yaml'
 require 'logger'
 require 'rake'
-require 'rspec/core/rake_task'
 
 task :default => "orga:show_todos"
 
@@ -18,7 +18,7 @@ namespace :web do
   desc "Run the sinatra app"
   task :run do
     # ruby "-Ilib web/run_weather_dash.rb"
-    system("rackup -Ilib -s thin -p 4567 -E development -P log/rack.pid web/config.ru")
+    system("bundle exec rackup -Ilib -s thin -p 4567 -E development -P log/rack.pid web/config.ru")
   end
 end
 
@@ -70,14 +70,33 @@ namespace :db do
   end
   
   task :environment do
-    ActiveRecord::Base.establish_connection(YAML::load(File.open(File.join('config','database.yml'))))
-    ActiveRecord::Base.logger = Logger.new(File.open(File.join('log','database.log'), 'a'))
+    if (ENV['DATABASE_URL']) then
+      db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/app-dev')
+      db_config = {
+        :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+        :host     => db.host,
+        :port     => db.port,
+        :username => db.user,
+        :password => db.password,
+        :database => db.path[1..-1],
+        :encoding => 'utf8',
+      }
+    else
+      db_config = YAML::load(File.open(File.join('config','database.yml')))
+      ActiveRecord::Base.logger = Logger.new(File.open(File.join('log','database.log'), 'a'))
+    end
+    ActiveRecord::Base.establish_connection(db_config)
   end  
 end
 
 namespace :test do
-  desc "run all specs" 
-  RSpec::Core::RakeTask.new(:spec) do |t|
-    t.pattern =  'spec/*_spec.rb'
-  end
+  begin
+    require 'rspec/core/rake_task'
+    
+    desc "run all specs" 
+    RSpec::Core::RakeTask.new(:spec) do |t|
+      t.pattern =  'spec/*_spec.rb'
+    end
+  rescue LoadError
+  end  
 end

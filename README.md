@@ -22,7 +22,21 @@ make
 sudo cp te923con /usr/bin
 ```
 
+###Libraries
+
+Install the following libs beforehead (packet names for Fedora 18):
+* postgresql-devel
+* sqlite-devel
+* readline-devel
+* openssl-devel
+* zlib-devel
+
+
+###Install all the gems we need
+
 The Ruby gems used are listed in the Gemfile. You can use the bundler gem to install them automaticly. If you have the **bundler** installed the next step after downloading the source is a call of `bundle install` in the source directory.
+
+The gems the app needs depend on the application environment. During Development and testing the productiv gems aren't needed. So install only the development gems with `bundle --without production`. Thus, the app depends on sqlite3 and will use this local database file. 
 
 Download the application
 ------------------------
@@ -43,6 +57,17 @@ The application reads the data from a sqlite database in the db directory. So le
 ```
 te923con -d > data/wetter.data
 ```
+
+###Create a database config file 
+
+To use sqlite3 with ActiveRecord a database.yml file is needed in the config directory. Create one with the following content:
+
+```
+adapter: sqlite3
+database: db/weather_db.sqlite
+log_dir: log
+```
+
 
 ###Create the database
 
@@ -78,4 +103,4 @@ The second script `load-data` copies that data file to the application directory
 
 ###Run the application
 
-The application can be started with `rake web:run`. The web application listens on http://localhost:4567/.
+The application can be started with `rake web:run`. The web application listens on http://localhost:4567/
