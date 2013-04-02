@@ -1,6 +1,6 @@
 #!/bin/sh
  
-git filter-branch --env-filter '
+git filter-branch -f --env-filter '
  
 an="$GIT_AUTHOR_NAME"
 am="$GIT_AUTHOR_EMAIL"
