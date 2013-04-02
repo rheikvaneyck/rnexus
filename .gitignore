@@ -7,4 +7,4 @@ nohup.out
 .komodotools
 rneux.sublime-project
 rneux.sublime-workspace
-script/HerokuLoader/load-heroku
+correct_author_name.sh
