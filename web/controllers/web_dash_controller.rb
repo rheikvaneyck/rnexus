@@ -7,13 +7,13 @@ class WeatherDashController < ApplicationController
   get '/' do
     battery_states = ["/images/battery-0-r.png","/images/battery-100-r.png"]
     weather_forecast = [
-      "/images/snow-shower.png",
-      "/images/snow.png",
-      "/images/rain.png",
-      "/images/drizzle.png",
-      "/images/clouds.png",
-      "/images/cloudy.png",
-      "/images/sunny.png" ]
+      "/images/snow-shower.svg",
+      "/images/snow.svg",
+      "/images/rain.svg",
+      "/images/drizzle.svg",
+      "/images/clouds.svg",
+      "/images/cloudy.svg",
+      "/images/sunny.svg" ]
   # weather_forcast:
   #   0: heavy snow
   #   1: little snow
