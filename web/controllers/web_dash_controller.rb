@@ -23,7 +23,7 @@ class WeatherDashController < ApplicationController
   #   5: some clouds
   #   6: sunny
     @plotter = Rnexus::Plotter.new('config')
-    @fc = weather_forecast[6] # weather_forecast[@plotter.get_last_measurement().FC]
+    @fc = weather_forecast[@plotter.get_last_measurement().FC]
     @status = Rnexus::Status.new('config')
     @state = @status.get_last_state
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT5],battery_states[@state.BATR],battery_states[@state.BATW]]
