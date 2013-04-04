@@ -32,7 +32,11 @@ module Rnexus
       # returns array
       start_timestamp = unix_time(day_string)
       end_timestamp = start_timestamp + 86400 # == 24h - 1
+<<<<<<< HEAD
+      data = Rnexus::DBManager::Measurement.where(:DT => start_timestamp..end_timestamp).order("\"DT\" ASC").map {|m| [dt_str(m.DT),m.send(type.to_sym)]}
+=======
       data = Rnexus::DBManager::Measurement.order("\"DT\" ASC").where(:DT => start_timestamp..end_timestamp).map {|m| [dt_str(m.DT),m.send(type.to_sym)]}
+>>>>>>> 435241e3f02c2421a75a17cde7863cb518d55603
       return data
     end
     
@@ -40,7 +44,11 @@ module Rnexus
       # returns array
       end_timestamp = get_last_measurement.DT
       start_timestamp = end_timestamp - (86400 * cnt_days)
+<<<<<<< HEAD
+      data = Rnexus::DBManager::Measurement.where(:DT => start_timestamp..end_timestamp).order("\"DT\" ASC").map {|m| [m.DT, m.send(type.to_sym)]}
+=======
       data = Rnexus::DBManager::Measurement.order("\"DT\" ASC").where(:DT => start_timestamp..end_timestamp).map {|m| [m.DT, m.send(type.to_sym)]}
+>>>>>>> 435241e3f02c2421a75a17cde7863cb518d55603
       days = {}
       data.each do |d|
         if days[df_str_s(d[0])].nil?
