@@ -70,12 +70,6 @@ class HerokuLoader
   end
 end
 
-<<<<<<< HEAD
-h = HerokuLoader.new("postgres://htvfnuodrmqvwx:ghpvgl-aEJaXqHAJXAUO8SDuji@ec2-54-225-69-193.compute-1.amazonaws.com:5432/da78g96nvph3qq")
-h.load_data_to_db
-h.delete_old_data
-=======
 h = HerokuLoader.new(ENV['DATABASE_URL'])
 h.load_data_to_db
 h.delete_old_data
->>>>>>> 435241e3f02c2421a75a17cde7863cb518d55603
