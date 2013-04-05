@@ -106,7 +106,7 @@ The second script `load-data` copies that data file to the application directory
 The application can be started with `rake web:run`. The web application listens on http://localhost:4567/
 
 License
-=======
+-------
 
 (The GPL)
 
