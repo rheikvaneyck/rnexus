@@ -1,3 +1,4 @@
+bundle/*
 db/*.sqlite
 config/database.yml
 log/*.log
@@ -8,3 +9,4 @@ nohup.out
 rneux.sublime-project
 rneux.sublime-workspace
 correct_author_name.sh
+correct_author_all.sh
