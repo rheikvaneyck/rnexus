@@ -16,17 +16,13 @@ GEM
     builder (3.0.4)
     daemons (1.1.9)
     diff-lcs (1.1.3)
-    eventmachine (1.0.0)
+    eventmachine (1.0.3)
     haml (3.1.7)
-    i18n (0.6.1)
-    multi_json (1.5.0)
-<<<<<<< HEAD
-    rack (1.4.3)
-=======
+    i18n (0.6.4)
+    multi_json (1.7.2)
     pg (0.15.0)
     rack (1.4.1)
->>>>>>> 435241e3f02c2421a75a17cde7863cb518d55603
-    rack-protection (1.3.2)
+    rack-protection (1.5.0)
       rack
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
@@ -35,7 +31,7 @@ GEM
     rspec-core (2.12.2)
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
-    rspec-mocks (2.12.1)
+    rspec-mocks (2.12.2)
     sinatra (1.3.3)
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
@@ -45,8 +41,8 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    tilt (1.3.3)
-    tzinfo (0.3.35)
+    tilt (1.3.7)
+    tzinfo (0.3.37)
 
 PLATFORMS
   ruby
@@ -54,12 +50,8 @@ PLATFORMS
 DEPENDENCIES
   activerecord (= 3.2.9)
   haml (= 3.1.7)
-<<<<<<< HEAD
-  rack (= 1.4.3)
-=======
   pg (= 0.15.0)
   rack (= 1.4.1)
->>>>>>> 435241e3f02c2421a75a17cde7863cb518d55603
   rspec (= 2.12.0)
   sinatra (= 1.3.3)
   sqlite3 (= 1.3.6)

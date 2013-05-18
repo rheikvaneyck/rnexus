@@ -28,7 +28,7 @@ class WeatherDashController < ApplicationController
     @state = @status.get_last_state
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT5],battery_states[@state.BATR],battery_states[@state.BATW]]
     
-    temp_data = @plotter.get_last_24h(:T5).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
+    temp_data = @plotter.get_last_24h(:T1).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
     temp_values = temp_data.sort.inspect
     
     press_data =  @plotter.get_last_24h(:PRESS).map {|d| d[1] }
@@ -49,7 +49,7 @@ class WeatherDashController < ApplicationController
     wind_groups.each {|k,v| sum = 0.0; v.map {|i| sum += i[1].to_f }; wind_sums[k.to_i - 1] = (sum / v.length) }
     wind_values = wind_sums.inspect
     
-    week_extrems_data = @plotter.get_days_min_max(7, :T5)
+    week_extrems_data = @plotter.get_days_min_max(7, :T1)
     week_dates = week_extrems_data.map{|d| DateTime.parse(d[0]).to_time.to_i * 1000}
     week_dates_values = week_dates.inspect
     weeks_min_values = week_extrems_data.map{|d| d[1]}.inspect
