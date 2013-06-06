@@ -1,3 +1,4 @@
+- get active temperature sensors automatically
 - write documentation
 - write a wiki
 - create better images
