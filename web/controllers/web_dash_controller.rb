@@ -26,14 +26,14 @@ class WeatherDashController < ApplicationController
     @fc = weather_forecast[@plotter.get_last_measurement().FC]
     @status = Rnexus::Status.new('config')
     @state = @status.get_last_state
-    @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT5],battery_states[@state.BATR],battery_states[@state.BATW]]
+    @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT3],battery_states[@state.BATR],battery_states[@state.BATW]]
     temp_data = @plotter.get_last_24h(:T3).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
     temp_values = temp_data.sort.inspect
     
     press_data =  @plotter.get_last_24h(:PRESS).map {|d| d[1] }
     press_values = press_data.inspect
     
-    humaditity_data =  @plotter.get_last_24h(:H5).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
+    humaditity_data =  @plotter.get_last_24h(:H3).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
     humaditity_values = humaditity_data.sort.inspect
   	
     rain_data = @plotter.get_last_24h(:RC)
