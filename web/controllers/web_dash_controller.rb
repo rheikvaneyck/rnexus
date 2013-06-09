@@ -4,7 +4,12 @@ require 'haml'
 require 'rnexus'
 
 class WeatherDashController < ApplicationController
+  # FIXME: get acitve temperature sensor automatically
+  ACTIVE_TEMP_SENSOR=:T3
+  ACTIVE_HUMI_SENSOR=:H3
+
   get '/' do
+    # FIXME: source image constants to config file
     battery_states = ["/images/battery-0-r.png","/images/battery-100-r.png"]
     weather_forecast = [
       "/images/snow.svg",
@@ -27,13 +32,13 @@ class WeatherDashController < ApplicationController
     @status = Rnexus::Status.new('config')
     @state = @status.get_last_state
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT3],battery_states[@state.BATR],battery_states[@state.BATW]]
-    temp_data = @plotter.get_last_24h(:T3).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
+    temp_data = @plotter.get_last_24h(ACTIVE_TEMP_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
     temp_values = temp_data.sort.inspect
     
     press_data =  @plotter.get_last_24h(:PRESS).map {|d| d[1] }
     press_values = press_data.inspect
     
-    humaditity_data =  @plotter.get_last_24h(:H3).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
+    humaditity_data =  @plotter.get_last_24h(ACTIVE_HUMI_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
     humaditity_values = humaditity_data.sort.inspect
   	
     rain_data = @plotter.get_last_24h(:RC)
@@ -48,7 +53,7 @@ class WeatherDashController < ApplicationController
     wind_groups.each {|k,v| sum = 0.0; v.map {|i| sum += i[1].to_f }; wind_sums[k.to_i - 1] = (sum / v.length) }
     wind_values = wind_sums.inspect
     
-    week_extrems_data = @plotter.get_days_min_max(7, :T3)
+    week_extrems_data = @plotter.get_days_min_max(7, ACTIVE_TEMP_SENSOR)
     week_dates = week_extrems_data.map{|d| DateTime.parse(d[0]).to_time.to_i * 1000}
     week_dates_values = week_dates.inspect
     weeks_min_values = week_extrems_data.map{|d| d[1]}.inspect
