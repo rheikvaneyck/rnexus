@@ -48,13 +48,13 @@ $(function () {
                 color: '#AA4643',
                 data: <%= weeks_max_values %>,
                 pointStart: <%= week_start_unixtime %>, // Date.UTC(2010, 0, 1),
-                pointInterval: 84600 * 1000 // one hour
+                pointInterval: 86400 * 1000 // one hour
             }, {
                 name: 'Min',
                 type: 'line',
                 data: <%= weeks_min_values  %>,
                 pointStart: <%= week_start_unixtime %>, // Date.UTC(2010, 0, 1),
-                pointInterval: 84600 * 1000 // one hour
+                pointInterval: 86400 * 1000 // one hour
             }],
         });
     });
