@@ -5,8 +5,8 @@ require 'rnexus'
 
 class WeatherDashController < ApplicationController
   # FIXME: get acitve temperature sensor automatically
-  ACTIVE_TEMP_SENSOR=:T3
-  ACTIVE_HUMI_SENSOR=:H3
+  ACTIVE_TEMP_SENSOR=:T4
+  ACTIVE_HUMI_SENSOR=:H4
 
   get '/' do
     # FIXME: source image constants to config file
