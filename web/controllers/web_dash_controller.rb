@@ -4,9 +4,11 @@ require 'haml'
 require 'rnexus'
 
 class WeatherDashController < ApplicationController
-  # FIXME: get acitve temperature sensor automatically
-  ACTIVE_TEMP_SENSOR=:T4
-  ACTIVE_HUMI_SENSOR=:H4
+  # This can be set to a fixed sensor (otherwise first active will be used)
+  # ACTIVE_TEMP_SENSOR=:T4
+  # ACTIVE_HUMI_SENSOR=:H4
+  ACTIVE_TEMP_SENSOR=nil
+  ACTIVE_HUMI_SENSOR=nil
 
   get '/' do
     # FIXME: source image constants to config file
@@ -32,27 +34,47 @@ class WeatherDashController < ApplicationController
     @status = Rnexus::Status.new('config')
     @state = @status.get_last_state
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT3],battery_states[@state.BATR],battery_states[@state.BATW]]
+
+	if ACTIVE_TEMP_SENSOR.nil?
+		temp_sensors = [:T1, :T2, :T3, :T4, :T5]
+		temp_sensors.each do |sensor|
+			temp_sensor_values = @plotter.get_last_24h(sensor).map {|d| d[1] }
+			if temp_sensor_values.min != temp_sensor_values.max
+				ACTIVE_TEMP_SENSOR=sensor
+				break
+			end
+		end
+	end
+	if ACTIVE_HUMI_SENSOR.nil?
+		humi_sensors = [:H1, :H2, :H3, :H4, :H5]
+		humi_sensors.each do |sensor|
+			humi_sensor_values = @plotter.get_last_24h(sensor).map {|d| d[1] }
+			if humi_sensor_values.min != humi_sensor_values.max
+				ACTIVE_HUMI_SENSOR=sensor
+				break
+			end
+		end
+	end
+
     temp_data = @plotter.get_last_24h(ACTIVE_TEMP_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
-    temp_values = temp_data.sort.inspect
-    
-    press_data =  @plotter.get_last_24h(:PRESS).map {|d| d[1] }
-    press_values = press_data.inspect
-    
-    humaditity_data =  @plotter.get_last_24h(ACTIVE_HUMI_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
-    humaditity_values = humaditity_data.sort.inspect
-  	
+
+    press_data = @plotter.get_last_24h(:PRESS).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
+    press_data_min = @plotter.get_last_24h(:PRESS).map {|d| d[1] }.min
+
+    humidity_data = @plotter.get_last_24h(ACTIVE_HUMI_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
+
     rain_data = @plotter.get_last_24h(:RC)
   	rain_value = rain_data.last[1] - rain_data.first[1]
-    
+
     wind_direction = @plotter.get_last_24h(:WD).map {|d| d[1] }
     wind_speed = @plotter.get_last_24h(:WS).map {|d| d[1] }
-    # FIXME CALC wind array (prob with array.zip()? 
+    # FIXME CALC wind array (prob with array.zip()?
     wind = wind_direction.zip(wind_speed)
     wind_groups = wind.group_by {|w| w[0] }
-    wind_sums = Array.new(16,0) 
+    wind_sums = Array.new(16,0)
     wind_groups.each {|k,v| sum = 0.0; v.map {|i| sum += i[1].to_f }; wind_sums[k.to_i - 1] = (sum / v.length) }
     wind_values = wind_sums.inspect
-    
+
     week_extrems_data = @plotter.get_days_min_max(7, ACTIVE_TEMP_SENSOR)
     week_dates = week_extrems_data.map{|d| DateTime.parse(d[0]).to_time.to_i * 1000}
     week_dates_values = week_dates.inspect
@@ -65,11 +87,11 @@ class WeatherDashController < ApplicationController
     erb = ERB.new(File.read("web/views/temperature_line.js.erb"))
     @temperature_line_js = erb.result(binding)
     erb = ERB.new(File.read("web/views/rain_gauge.js.erb"))
-    @rain_gauge_js = erb.result(binding)  
+    @rain_gauge_js = erb.result(binding)
     erb = ERB.new(File.read("web/views/temp_extrems.js.erb"))
-    @temp_extrems_js = erb.result(binding)  
+    @temp_extrems_js = erb.result(binding)
     erb = ERB.new(File.read("web/views/wind_polar.js.erb"))
-    @wind_polar_js = erb.result(binding)  
+    @wind_polar_js = erb.result(binding)
 
     haml :index
   end
