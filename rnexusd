@@ -3,8 +3,20 @@
 # rnexusd startup script for rnexus sinatra server.
 # description: Starts Sinatra as an unprivileged user.
 #
+# expects the sindatra app in the directory /home/pi/rnexus
+#
+# Tell Ubuntu to start your daemon when the computer starts up and shut it off 
+# when the computer starts down: sudo update-rc.d sinatra defaults
+#
+# Start the service manually for your first and only time: sudo /etc/init.d/sinatra start
+
+APPDIR=/home/pi/rnexus
+LIBDIR=$APPDIR/lib
+CTRLSCRIPT=/home/pi/rnexus/bin/rnexus
+
+USER=pi
 	 
-sudo -u www-data ruby -I/var/www/rnexus/lib /var/www/rnexus/bin/rnexus $1
+su - $USER -c ruby -I$LIBDIR $CTRLSCRIPT $1
 RETVAL=$?
 	 
 exit $RETVAL
