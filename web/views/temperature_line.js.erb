@@ -57,7 +57,7 @@ $(function () {
                 // indicating how to compare the array elements 
                 // pres_data[0] => Date
                 // press_data[1] => Value
-                min: <%= "#{((press_data.min {|a,b| a[1] <=> b[1] }) / 10).floor * 10}" %> ,
+                min: <%= "#{(press_data_min / 10).floor * 10}" %> ,
                 startOnTick: false,
                 labels: {
                     formatter: function() {
