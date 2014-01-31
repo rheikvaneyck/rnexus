@@ -53,10 +53,6 @@ $(function () {
                 title: {
                     text: '', // 'Luftdruck',
                 },
-                // press_data is a two-dimensional array. Finding the minimum requieres a block
-                // indicating how to compare the array elements 
-                // pres_data[0] => Date
-                // press_data[1] => Value
                 min: <%= "#{(press_data_min / 10).floor * 10}" %> ,
                 startOnTick: false,
                 labels: {
