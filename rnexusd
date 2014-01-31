@@ -3,7 +3,9 @@
 # rnexusd startup script for rnexus sinatra server.
 # description: Starts Sinatra as an unprivileged user.
 #
-# expects the sindatra app in the directory /home/pi/rnexus
+# expects the sinatra app in the directory /home/pi/rnexus
+#
+# Copy this script to /etc/init.d/
 #
 # Tell Ubuntu to start your daemon when the computer starts up and shut it off 
 # when the computer starts down: sudo update-rc.d sinatra defaults
