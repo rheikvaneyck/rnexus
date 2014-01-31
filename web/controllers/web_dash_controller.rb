@@ -37,7 +37,7 @@ class WeatherDashController < ApplicationController
     @sensors = [[:T1, :H1, false], [:T2, :H2, false], [:T3, :H3, false], [:T4, :H3, false], [:T5, :H5, false]]
     m = @plotter.get_last_measurement
     @sensors.each do |sensor|
-    	sensor[2] = true unless m.send(sensor[0].to_sym).nil?
+    	sensor[2] = true unless m.send(sensor[1]) == 0
     end
     
     # Find the first acitve sensor
