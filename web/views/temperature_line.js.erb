@@ -30,7 +30,7 @@ $(function () {
             xAxis: {
                 type: 'datetime',
                 dateTimeLabelFormats: {
-                    hour: '%H:%M'   
+                    hour: '%H:%M'
                 }
             },
             yAxis: [{
@@ -53,7 +53,7 @@ $(function () {
                 title: {
                     text: '', // 'Luftdruck',
                 },
-                min: <%= "#{(press_data.min / 10).floor * 10}" %> ,
+                min: <%= "#{(press_data_min / 10).floor * 10}" %> ,
                 startOnTick: false,
                 labels: {
                     formatter: function() {
@@ -80,7 +80,7 @@ $(function () {
                     }
                 },
                 opposite: true,
-            }], 
+            }],
             tooltip: {
                 formatter: function() {
                   var unit = {
@@ -106,9 +106,8 @@ $(function () {
                 name: 'Luftdruck',
                 type: 'column',
                 yAxis: 1,
-                data: <%= press_values  %>,
-                pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
-                pointInterval: 3600 * 1000 // one hour
+                data: <%= press_data  %>,
+                pointStart: <%= start_unixtime %> // Date.UTC(2010, 0, 1)
             }, {
                 name: 'Luftfeuchte',
                 type: 'spline',
@@ -117,21 +116,19 @@ $(function () {
                 },
                 dashStyle: 'shortdot',
                 color: '#89A54E',
-                data: <%= humaditity_values %>,
+                data: <%= humidity_data %>,
                 yAxis: 2,
-                pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
-                pointInterval: 3600 * 1000 // one hour
+                pointStart: <%= start_unixtime %> // Date.UTC(2010, 0, 1)
             }, {
                 name: 'Temperatur',
                 color: '#AA4643',
                 marker: {
                   symbol: 'circle'
                 },
-                data: <%= temp_values %>,
-                pointStart: <%= start_unixtime %>, // Date.UTC(2010, 0, 1),
-                pointInterval: 3600 * 1000 // one hour
+                data: <%= temp_data %>,
+                pointStart: <%= start_unixtime %> // Date.UTC(2010, 0, 1)
             }],
         });
     });
-    
+
 });
