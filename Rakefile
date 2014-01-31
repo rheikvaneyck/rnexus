@@ -82,6 +82,7 @@ namespace :db do
         :encoding => 'utf8',
       }
     else
+      Dir.mkdir('log') unless Dir.exists?('log')
       db_config = YAML::load(File.open(File.join('config','database.yml')))
       ActiveRecord::Base.logger = Logger.new(File.open(File.join('log','database.log'), 'a'))
     end
