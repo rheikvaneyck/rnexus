@@ -47,6 +47,7 @@ class WeatherDashController < ApplicationController
     temp_data = @plotter.get_last_24h(ACTIVE_TEMP_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
 
     press_data = @plotter.get_last_24h(:PRESS).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
+    press_data_min = press_data.min {|a,b| a[1] <=> b[1] }
 
     humidity_data = @plotter.get_last_24h(ACTIVE_HUMI_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
 
