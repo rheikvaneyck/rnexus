@@ -31,7 +31,7 @@ EOS
 #puts DISCLAMER
 
 pwd = Dir.pwd
-Daemons.run_proc('web_dash_controller.rb', {:dir_mode => :normal, :dir => "/opt/pids/sinatra}) do
+Daemons.run_proc('web_dash_controller.rb', {:dir_mode => :normal, :dir => "log"}) do
   Dir.chdir(pwd)
   exec "ruby -Ilib web/controllers/web_dash_controller.rb"
 end
