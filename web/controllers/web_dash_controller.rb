@@ -4,11 +4,6 @@ require 'haml'
 require 'rnexus'
 
 class WeatherDashController < ApplicationController
-  # This can be set to a fixed sensor (otherwise first active will be used)
-  # ACTIVE_TEMP_SENSOR=:T4
-  # ACTIVE_HUMI_SENSOR=:H4
-  ACTIVE_TEMP_SENSOR=nil
-  ACTIVE_HUMI_SENSOR=nil
 
   get '/' do
     # FIXME: source image constants to config file
@@ -35,36 +30,28 @@ class WeatherDashController < ApplicationController
     @state = @status.get_last_state
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT3],battery_states[@state.BATR],battery_states[@state.BATW]]
 
-	if ACTIVE_TEMP_SENSOR.nil?
-		temp_sensors = [:T1, :T2, :T3, :T4, :T5]
-		temp_sensors.each do |sensor|
-			temp_sensor_values = @plotter.get_last_24h(sensor).map {|d| d[1] }
-			if temp_sensor_values.min != temp_sensor_values.max
-				ACTIVE_TEMP_SENSOR=sensor
-				break
-			end
-		end
-	end
-	if ACTIVE_HUMI_SENSOR.nil?
-		humi_sensors = [:H1, :H2, :H3, :H4, :H5]
-		humi_sensors.each do |sensor|
-			humi_sensor_values = @plotter.get_last_24h(sensor).map {|d| d[1] }
-			if humi_sensor_values.min != humi_sensor_values.max
-				ACTIVE_HUMI_SENSOR=sensor
-				break
-			end
-		end
-	end
+    # probing for acitve Sensors
+    # because there is one device for tempereture AND humidity, we will only probe temperatur sensors
+    # Initialize the activity of all sensors to false
+    # so we have a complete list of all sensors activity
+    @sensors = [[:T1, :H1, false], [:T2, :H2, false], [:T3, :H3, false], [:T4, :H3, false], [:T5, :H5, false]]
+    m = @plotter.get_last_measurement
+    @sensors.each do |sensor|
+    	sensor[2] = true unless m.send(sensor[0].to_sym).nil?
+    end
+    
+    # Find the first acitve sensor
+    ACTIVE_TEMP_SENSOR = @sensors.detect {|s| s[2] == true }[0]
+    ACTIVE_HUMI_SENSOR = @sensors.detect {|s| s[2] == true }[1]
 
     temp_data = @plotter.get_last_24h(ACTIVE_TEMP_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
 
     press_data = @plotter.get_last_24h(:PRESS).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
-    press_data_min = @plotter.get_last_24h(:PRESS).map {|d| d[1] }.min
 
     humidity_data = @plotter.get_last_24h(ACTIVE_HUMI_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
 
     rain_data = @plotter.get_last_24h(:RC)
-  	rain_value = rain_data.last[1] - rain_data.first[1]
+    rain_value = rain_data.last[1] - rain_data.first[1]
 
     wind_direction = @plotter.get_last_24h(:WD).map {|d| d[1] }
     wind_speed = @plotter.get_last_24h(:WS).map {|d| d[1] }
