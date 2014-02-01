@@ -1,12 +1,22 @@
-#!/bin/env ruby
-# require 'bundler/setup'
-# require 'rnexus'
+#!/usr/bin/env ruby
+#
+# Create an /opt/pids/sinatra directory. (It seemed as good a place as any.) 
+# Let a non-privileged user write to that directory, for example by executing 
+# “sudo chown www-data /opt/pids/sinatra; sudo chmod 755 /opts/pids/sinatra”. 
+# Make a note of what non-privileged user you use. I am just reusing www-data 
+# because Apache has conveniently provided him for me and he is guaranteed to 
+# not to be able to screw up anything important if he is compromised.
+#
+# Put this script in the same directory as your Sinatra app. Make sure the 
+# scripts are readable, but not writable, by www-data. 
+# (sudo chmod 755 /www/var/phone.example.com/ will accomplish 
+# this: it makes only the owner able to write to it, but any user on the 
+# system — including www-data — can read from it.)
+# 
 
-# For a command line program 
-# runner = Rnexus::Runner.new(ARGV)
-# runner.run
+require 'bundler/setup'
+require 'daemons'
 
-# Just start the sinatra app
 DISCLAMER = <<-EOS 
 rnexus  Copyright (C) 2013 Marcus Nasarek
 
@@ -14,5 +24,13 @@ This program comes with ABSOLUTELY NO WARRANTY.
 This is free software, and you are welcome to redistribute it
 under certain conditions.
 EOS
-puts DISCLAMER
-system("bundle exec rackup -Ilib -s thin -p 4567 -E development -P log/rack.pid web/config.ru")
+#puts DISCLAMER
+
+APPDIR=File.expand_path('../', File.dirname(__FILE__))
+LOGDIR=File.join(APPDIR, 'log')
+
+Dir.mkdir('LOGDIR') unless Dir.exists?('LOGDIR')
+Daemons.run_proc('web_dash_controller', {:dir_mode => :normal, :dir => LOGDIR}) do
+  Dir.chdir(APPDIR)
+  exec "bundle exec rackup -Ilib -s thin -p 4567 -E development -P #{LOGDIR}/rack.pid #{APPDIR}/web/config.ru"
+end

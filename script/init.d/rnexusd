@@ -1,63 +1,26 @@
 #!/bin/bash
-# rnexusd daemon
-# chkconfig: 345 20 80
-# description: rnexus daemon
-# processname: rnexusd
+#
+# rnexusd startup script for rnexus sinatra server.
+# description: Starts Sinatra as an unprivileged user.
+#
+# expects the sinatra app in the directory /home/pi/rnexus
+#
+# Copy this script to /etc/init.d/
+#
+# Tell debian to start your daemon when the computer starts up and shut it off 
+# when the computer starts down: sudo update-rc.d rnexusd defaults
+#
+# Start the service manually for your first and only time: 
+# sudo /etc/init.d/rnexusd start
 
-USER="nasarek"
-DAEMON_PATH="/home/$USER/Source/rnexus"
+# ADJUST this directory to your rnexus source path
+APPDIR=/home/pi/rnexus
 
-DAEMON="bundle exec rake web:run"
-DAEMONSTOP="bundle exec rake web:stop"
-DEAMONOPTS=""
+CTRLSCRIPT=$APPDIR/bin/rnexus
 
-NAME=rnexusd
-DESC="rnexus weather station app daemon"
-PIDFILE=$DAEMON_PATH/log/rack.pid
-SCRIPTNAME=/etc/init.d/$NAME
-
-case "$1" in
-start)
-  printf "%-50s" "Starting $NAME..."
-  su - $USER -c "cd $DAEMON_PATH;$DAEMON $DAEMONOPTS"
-  PID=`cat $PIDFILE` 
-        if [ -z $PID ]; then
-            printf "%s\n" "Fail"
-        else
-            printf "%s\n" "Ok"
-        fi
-;;
-status)
-        printf "%-50s" "Checking $NAME..."
-        if [ -f $PIDFILE ]; then
-            PID=`cat $PIDFILE`
-            if [ -z "`ps axf | grep ${PID} | grep -v grep`" ]; then
-                printf "%s\n" "Process dead but pidfile exists"
-            else
-                echo "Running"
-            fi
-        else
-            printf "%s\n" "Service not running"
-        fi
-;;
-stop)
-        printf "%-50s" "Stopping $NAME"
-            PID=`cat $PIDFILE`
-        if [ -f $PIDFILE ]; then
-            su - $USER -c "cd $DAEMON_PATH;$DAEMONSTOP"
-            printf "%s\n" "Ok"
-            rm -f $PIDFILE
-        else
-            printf "%s\n" "pidfile not found"
-        fi
-;;
-
-restart)
-    $0 stop
-    $0 start
-;;
-
-*)
-        echo "Usage: $0 {status|start|stop|restart}"
-        exit 1
-esac
+USER=pi
+	 
+su - $USER -c "$CTRLSCRIPT $1"
+RETVAL=$?
+	 
+exit $RETVAL
