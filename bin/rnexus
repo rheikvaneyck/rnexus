@@ -16,13 +16,6 @@
 
 require 'bundler/setup'
 require 'daemons'
-require 'sinatra/base'
-require './web/helpers/application_helper.rb'
-require './web/controllers/application_controller'
-
-# For a command line program 
-# runner = Rnexus::Runner.new(ARGV)
-# runner.run
 
 DISCLAMER = <<-EOS 
 rnexus  Copyright (C) 2013 Marcus Nasarek
@@ -33,8 +26,11 @@ under certain conditions.
 EOS
 #puts DISCLAMER
 
-pwd = Dir.pwd
-Daemons.run_proc('web_dash_controller.rb', {:dir_mode => :normal, :dir => "log"}) do
-  Dir.chdir(pwd)
-  exec "ruby -Ilib web/controllers/web_dash_controller.rb"
+APPDIR=File.expand_path('../', File.dirname(__FILE__))
+LOGDIR=File.join(APPDIR, 'log')
+
+Dir.mkdir('LOGDIR') unless Dir.exists?('LOGDIR')
+Daemons.run_proc('web_dash_controller', {:dir_mode => :normal, :dir => LOGDIR}) do
+  Dir.chdir(APPDIR)
+  exec "bundle exec rackup -Ilib -s thin -p 4567 -E development -P #{LOGDIR}/rack.pid #{APPDIR}/web/config.ru"
 end
