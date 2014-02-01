@@ -1,4 +1,4 @@
-#!/bin/env ruby
+#!/usr/bin/env ruby
 #
 # Create an /opt/pids/sinatra directory. (It seemed as good a place as any.) 
 # Let a non-privileged user write to that directory, for example by executing 
