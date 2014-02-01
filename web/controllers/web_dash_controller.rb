@@ -34,7 +34,7 @@ class WeatherDashController < ApplicationController
     # because there is one device for tempereture AND humidity, we will only probe temperatur sensors
     # Initialize the activity of all sensors to false
     # so we have a complete list of all sensors activity
-    @sensors = [[:T1, :H1, false], [:T2, :H2, false], [:T3, :H3, false], [:T4, :H3, false], [:T5, :H5, false]]
+    @sensors = [[:T1, :H1, false], [:T2, :H2, false], [:T3, :H3, false], [:T4, :H4, false], [:T5, :H5, false]]
     m = @plotter.get_last_measurement
     @sensors.each do |sensor|
       puts m.send(sensor[1])
