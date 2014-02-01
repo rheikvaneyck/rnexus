@@ -16,6 +16,9 @@
 
 require 'bundler/setup'
 require 'daemons'
+require 'sinatra/base'
+require './web/helpers/application_helper.rb'
+require './web/controllers/application_controller'
 
 # For a command line program 
 # runner = Rnexus::Runner.new(ARGV)
