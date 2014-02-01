@@ -42,6 +42,7 @@ class WeatherDashController < ApplicationController
     
     # Find the first acitve sensor
     ACTIVE_TEMP_SENSOR = @sensors.detect {|s| s[2] == true }[0]
+    puts ACTIVE_TEMP_SENSOR
     ACTIVE_HUMI_SENSOR = @sensors.detect {|s| s[2] == true }[1]
 
     temp_data = @plotter.get_last_24h(ACTIVE_TEMP_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
