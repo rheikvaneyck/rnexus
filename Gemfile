@@ -1,4 +1,5 @@
 source "http://rubygems.org"
+gem "rake", "10.0.3"
 gem "activerecord", "3.2.9"
 gem "sinatra", "1.3.3"
 gem "rack", "1.4.1"

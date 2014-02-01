@@ -27,9 +27,9 @@ class WeatherDashController < ApplicationController
   #   4: cloudy
   #   5: some clouds
   #   6: sunny
-    @plotter = Rnexus::Plotter.new('config')
+    @plotter = Rnexus::Plotter.new(File.join(File.dirname(__FILE__), '..', '..', 'config'))
     @fc = weather_forecast[@plotter.get_last_measurement().FC]
-    @status = Rnexus::Status.new('config')
+    @status = Rnexus::Status.new(File.join(File.dirname(__FILE__), '..', '..', 'config'))
     @state = @status.get_last_state
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT3],battery_states[@state.BATR],battery_states[@state.BATW]]
     temp_data = @plotter.get_last_24h(ACTIVE_TEMP_SENSOR).map {|d| [DateTime.parse(d[0]).to_time.to_i * 1000, d[1]] }
