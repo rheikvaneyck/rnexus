@@ -16,16 +16,15 @@ end
 
 namespace :web do
   desc "Run the sinatra app"
-  task :run do
-    # ruby "-Ilib web/run_weather_dash.rb"
-    system("bundle exec rackup -D -Ilib -s thin -p 4567 -E development -P log/rack.pid web/config.ru")
+  task :start do
+    system("bundle exec unicorn -c unicorn.rb -Ilib -E development -D")
   end
   desc "Stop the sinatra app"
   task :stop do
-    if File.exists?('log/rack.pid') then
-      pid = File.read('log/rack.pid')
-      if File.exists?("/proc/#{pid}") then
-        Process::kill("SIGINT", pid.to_i)
+    if File.exists?('tmp/pids/unicorn.pid') then
+      @pid = File.read('tmp/pids/unicorn.pid').strip
+      if File.exists?("/proc/#{@pid}") then
+        Process::kill("SIGINT", @pid.to_i)
       end
     end
   end 
