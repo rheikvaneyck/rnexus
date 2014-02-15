@@ -24,9 +24,9 @@ class WeatherDashController < ApplicationController
   #   4: cloudy
   #   5: some clouds
   #   6: sunny
-    @plotter = Rnexus::Plotter.new(File.join(File.dirname(__FILE__), '..', '..', 'config'))
+    @plotter = Rnexus::Plotter.new(File.join(File.dirname(__FILE__), '..', 'config'))
     @fc = weather_forecast[@plotter.get_last_measurement().FC]
-    @status = Rnexus::Status.new(File.join(File.dirname(__FILE__), '..', '..', 'config'))
+    @status = Rnexus::Status.new(File.join(File.dirname(__FILE__), '..', 'config'))
     @state = @status.get_last_state
     @batteries = [battery_states[@state.BAT1],battery_states[@state.BAT3],battery_states[@state.BATR],battery_states[@state.BATW]]
 
@@ -78,13 +78,13 @@ class WeatherDashController < ApplicationController
     start_unixtime = temp_data.first[0]
     week_start_unixtime = week_dates.first
     chart_title = "Last 24h"
-    erb = ERB.new(File.read("web/views/temperature_line.js.erb"))
+    erb = ERB.new(File.read("views/temperature_line.js.erb"))
     @temperature_line_js = erb.result(binding)
-    erb = ERB.new(File.read("web/views/rain_gauge.js.erb"))
+    erb = ERB.new(File.read("views/rain_gauge.js.erb"))
     @rain_gauge_js = erb.result(binding)
-    erb = ERB.new(File.read("web/views/temp_extrems.js.erb"))
+    erb = ERB.new(File.read("views/temp_extrems.js.erb"))
     @temp_extrems_js = erb.result(binding)
-    erb = ERB.new(File.read("web/views/wind_polar.js.erb"))
+    erb = ERB.new(File.read("views/wind_polar.js.erb"))
     @wind_polar_js = erb.result(binding)
 
     haml :index
