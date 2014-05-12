@@ -10,7 +10,7 @@ rnexus is a small web based dashboard using Ruby's sinatra library as applicatio
 Dependencies
 ------------
 
-The application presents the data read from the TFA Nexus weather station. The tool used for accessing the data via the USB port is **t923tool** from Sven John ( http://te923.fukz.org/ ). **t923tool** reads the data from other weather stations as well, e.g. it supports most weather stations based on Hideki weather station like IROX Pro X, Mebus TE923.  Though, this tool has some restrictions with the TFA Nexus (reads only max ~770 entries from memory and doesn't read the solar sensor), the tool is still very usefull. 
+The application presents the data read from the TFA Nexus weather station. The tool used for accessing the data via the USB port is **t923tool** from Sven John ( http://te923.fukz.org/ ). **t923tool** reads the data from other weather stations as well, e.g. it supports most weather stations based on Hideki weather station like IROX Pro X, Mebus TE923.
 
 Download te923tool from Sven's website and compile the source: (You should have the libusb-dev installed).
 
