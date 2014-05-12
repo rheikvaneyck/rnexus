@@ -1,7 +1,7 @@
 rnexus
 ======
 
-Web based dashboard for the weather station FTA Nexus 
+Web based dashboard for the weather station NEXUS from TFA Dostmann 
 
 **Currently under development**
 
@@ -10,21 +10,22 @@ rnexus is a small web based dashboard using Ruby's sinatra library as applicatio
 Dependencies
 ------------
 
-The application presents the data read from the FTA Nexus weather station. The tool used for accessing the data via the USB port is **t923tool** from Sven John ( http://te923.fukz.org/ ). Though this tool has some restrictions with the FTA Nexus (reads only max ~770 entries from memory and doesn't read the solar sensor), the tool is still usefull. 
+The application presents the data read from the TFA Nexus weather station. The tool used for accessing the data via the USB port is **t923tool** from Sven John ( http://te923.fukz.org/ ). **t923tool** reads the data from other weather stations as well, e.g. it supports most weather stations based on Hideki weather station like IROX Pro X, Mebus TE923.  Though, this tool has some restrictions with the TFA Nexus (reads only max ~770 entries from memory and doesn't read the solar sensor), the tool is still very usefull. 
 
-Download te923tool from its website and compile the source: (You should have the libusb-dev installed).
+Download te923tool from Sven's website and compile the source: (You should have the libusb-dev installed).
 
 ```
-wget http://te923.fukz.org/downloads/te923tool-0.5.tgz
-tar xfz  te923tool-0.5.tgz
-cd te923tool-0.5
+wget http://te923.fukz.org/downloads/te923tool-0.6.1.tgz
+tar xfz  te923tool-0.6.1.tgz
+cd te923tool-0.6.1
 make
 sudo cp te923con /usr/bin
 ```
 
 ###Libraries
 
-Install the following libs beforehead (packet names for Fedora 18):
+Install the following libs beforehead (packet names for Fedora 20):
+* libusb-dev
 * postgresql-devel
 * sqlite-devel
 * readline-devel
