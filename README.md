@@ -24,7 +24,7 @@ sudo cp te923con /usr/bin
 
 ###Libraries
 
-Install the following libs beforehead (packet names for Fedora 20):
+Install the following libs beforehead (package names for Fedora 20):
 * libusb-dev
 * postgresql-devel
 * sqlite-devel
